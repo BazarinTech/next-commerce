@@ -33,7 +33,9 @@ export default function RootLayout({
         <div className="max-w-6xl w-full">
           <Topbar />
           <Topbar2 />
-          {children}
+          <div className="min-h-screen">
+            {children}
+          </div>
           <Bottombar />
         </div>
       </body>

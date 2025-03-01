@@ -3,10 +3,8 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-type Props = {
-    title?: string
-}
-const Topbar = ({title}: Props) => {
+const Topbar = () => {
+  const [title, setTitle] = useState<string | null>()
   const [isHide, setIsHide] = useState<boolean>(false)
   const pathsHide = [
     '/products/2',
@@ -18,6 +16,18 @@ const Topbar = ({title}: Props) => {
     }else{
       setIsHide(false)
     }
+    if (pathname == '/orders') {
+      setTitle('Grabs List')
+    }else if(pathname == '/rolls'){
+      setTitle('Upgrade Rolls')
+    }else if(pathname == '/team'){
+      setTitle('Team List')
+    }else if(pathname == '/wallet'){
+      setTitle('Wallet')
+    } else{
+      setTitle(null)
+    }
+
   }, [pathname])
 
   return (

@@ -7,7 +7,7 @@ import Product from "@/components/Product";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="">
 
       <div className="px-4 py-2 w-full mt-5">
         <div className="bg-black rounded-lg px-2 w-full max-h-60 py-2 flex flex-row text-white">

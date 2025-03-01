@@ -23,7 +23,7 @@ const Topbar2 = ({title}: Props) => {
     '/rolls',
     '/wallet',
     '/',
-    'team'
+    '/team'
   ]
   const pathname = usePathname();
   useEffect(() => {

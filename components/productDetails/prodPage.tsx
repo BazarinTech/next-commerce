@@ -13,7 +13,7 @@ import { useState } from 'react'
 function ProdPage() {
     const [isDialogOpen, setIsDialogOpen] = useState(false)
   return (
-    <div className='min-h-screen sm:mb-72'>
+    <div className='sm:mb-72'>
       <div className="w-full bg-gray-300">
         <Image 
           src={prod}
