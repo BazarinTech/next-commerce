@@ -16,9 +16,13 @@ const Bottombar = () => {
   ];
   
    const [isHide, setIsHide] = useState<boolean>(false)
-    const pathsHide = [
-      '/products/2',
-    ]
+   const pathsHide = [
+    '/products/2',
+    '/deposit',
+    '/withdraw',
+    '/transaction',
+    '/bank'
+  ]
     const pathname = usePathname();
     useEffect(() => {
       if (pathsHide.indexOf(pathname) > -1) {

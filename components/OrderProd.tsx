@@ -15,7 +15,7 @@ type Props = {
 const OrderProd = ({title, price, image, gains, status, date}: Props) => {
     const prod = "/images/shoes-1.png"
   return (
-    <div className="bg-white w-full rounded-lg py-2 px-4 flex my-3">
+    <div className="bg-white w-full rounded-lg py-2 px-2 flex my-3">
         <div className="bg-gray-300 w-45 h-50 rounded-lg overflow-hidden">
             <Image 
                 src={image ? image : prod}
@@ -25,7 +25,7 @@ const OrderProd = ({title, price, image, gains, status, date}: Props) => {
                 className="w-full h-full object-cover"
             />
         </div>
-        <div className="w-2/3 block px-4">
+        <div className="w-2/3 block px-3">
             <h2 className="text-lg font-bold">{title ? title : 'Sneaker Leather Shoe with osumpo (Ones in a day)'}</h2>
             <div className="flex gap-0.5 items-center py-2">
                 <DollarSign size={20} color="#a7a0a0" />

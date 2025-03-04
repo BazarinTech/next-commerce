@@ -9,7 +9,7 @@ type Props = {
     price: number,
     image?: string,
     rolls?: number,
-    status: 'Current' | 'Buy',
+    status: 'Active' | 'Buy',
 }
 
 function RollProd({title, price, image, rolls, status}: Props) {
@@ -33,7 +33,7 @@ function RollProd({title, price, image, rolls, status}: Props) {
             </div>
             <h2 className="text-lg font-bold py-2">Kes {price}</h2>
             <div className="">
-                <Button className="w-50" disabled={status == 'Current' ? true : false}>{status == 'Current' ? 'Current' : 'Buy'}</Button>
+                <Button className="w-50" disabled={status == 'Active' ? true : false}>{status == 'Active' ? 'Active' : 'Buy'}</Button>
             </div>
         </div>
     </div>

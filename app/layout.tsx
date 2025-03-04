@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased grid place-items-center font-[family-name:var(--font-geist-sans)]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased grid place-items-center box-border overflow-x-hidden font-[family-name:var(--font-geist-sans)]`}
       >
         <div className="max-w-6xl w-full">
           <Topbar />

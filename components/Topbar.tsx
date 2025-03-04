@@ -8,6 +8,10 @@ const Topbar = () => {
   const [isHide, setIsHide] = useState<boolean>(false)
   const pathsHide = [
     '/products/2',
+    '/deposit',
+    '/withdraw',
+    '/transaction',
+    '/bank'
   ]
   const pathname = usePathname();
   useEffect(() => {
