@@ -2,9 +2,6 @@ import AlertComp from '@/components/AlertComp'
 import DialogComp from '@/components/DialogComp'
 import FormInput from '@/components/FormInput'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@radix-ui/react-label'
-import React from 'react'
 
 function page() {
   return (

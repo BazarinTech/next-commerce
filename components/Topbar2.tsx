@@ -13,9 +13,10 @@ const Topbar2 = ({title}: Props) => {
         { name: "Bank", href: "/bank"},
         { name: "Bonus", href: "/bonus"},
         { name: "Add Funds", href: "/deposit"},
-        { name: "Product", href: "/products/:prodID"},
+        { name: "About Us", href: "/about"},
         { name: "Transaction", href: "/transaction"},
         { name: "Make Withdrawal", href: "/withdraw"},
+        { name: "Profile Details", href: "/account"},
       ];
 
   const [isHide, setIsHide] = useState<boolean>(false)

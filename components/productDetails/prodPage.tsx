@@ -6,7 +6,6 @@ import { ShoppingBag } from 'lucide-react'
 import ProdIncrement from '@/components/productDetails/ProdIncrement'
 import GrabBtn from './GrabBtn'
 import { AlertDialogDemo } from '@/ui/AlertDialog'
-import { AlertDialog, AlertDialogTrigger } from '@radix-ui/react-alert-dialog'
 import { useState } from 'react'
 
 

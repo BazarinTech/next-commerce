@@ -11,7 +11,10 @@ const Topbar = () => {
     '/deposit',
     '/withdraw',
     '/transaction',
-    '/bank'
+    '/bank',
+    '/bonus',
+    '/about',
+    '/account',
   ]
   const pathname = usePathname();
   useEffect(() => {
