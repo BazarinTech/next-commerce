@@ -15,6 +15,9 @@ const Topbar = () => {
     '/bonus',
     '/about',
     '/account',
+    '/auth/2fa',
+    '/auth/login',
+    '/auth/register'
   ]
   const pathname = usePathname();
   useEffect(() => {
