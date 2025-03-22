@@ -2,8 +2,12 @@
 
 import { useState } from "react"
 
-function ProdIncrement() {
-    const [count, setCount] = useState<number>(1)
+type Props = {
+    setCount: (count: number) => void;
+    count: number;
+}
+function ProdIncrement({setCount, count}: Props) {
+
 
     const handleIncrement = () => {
         if (count < 10) {

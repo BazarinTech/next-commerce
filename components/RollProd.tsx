@@ -3,6 +3,11 @@
 import { CalendarMinus2, DollarSign, Hand } from "lucide-react"
 import Image from "next/image"
 import { Button } from "./ui/button"
+import useFormat from "@/lib/useFormat"
+import { useEffect, useState } from "react"
+import orderRolls from "@/lib/orderRolls"
+import { toast } from "sonner"
+import getRolls from "@/lib/getRolls"
 
 type Props = {
     title?: string,
@@ -10,10 +15,42 @@ type Props = {
     image?: string,
     rolls?: number,
     status: 'Active' | 'Buy',
+    email: string | null,
+    id: number
 }
 
-function RollProd({title, price, image, rolls, status}: Props) {
+type PostData = {
+    id: number
+    type: string,
+    user: string
+}
+
+function RollProd({title, price, image, rolls, status, id, email}: Props) {
     const prod = "/images/beginner-1.png"
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const [postData, setPostData] = useState<PostData>({
+        id: id,
+        type:'rolls',
+        user: ''
+    })
+
+    useEffect(() => {
+        if (email) {
+            setPostData({...postData, user:email})
+        }
+    }, [email])
+
+    const handleRolls = async () => {
+        setIsLoading(true)
+        const response = await orderRolls({...postData, setIsLoading})
+
+        if (response.status == 'Success') {
+            toast.success(response.message)
+            getRolls({email})
+        }else{
+            toast.error(response.message)
+        }
+    }
   return (
     <div className="bg-white w-full rounded-lg py-2 px-4 grid place-items-center my-3">
         <div className="bg-gray-300 w-full h-50 sm:h-fit rounded-lg overflow-hidden">
@@ -31,9 +68,10 @@ function RollProd({title, price, image, rolls, status}: Props) {
                 <Hand color="#a7a0a0" />
                 <p className="text-lg text-gray-500">Grabbing Rolls: { rolls ? rolls : '1'}</p>
             </div>
-            <h2 className="text-lg font-bold py-2">Kes {price}</h2>
+            <h2 className="text-lg font-bold py-2">Kes {useFormat({value: price})}</h2>
             <div className="">
-                <Button className="w-50" disabled={status == 'Active' ? true : false}>{status == 'Active' ? 'Active' : 'Buy'}</Button>
+                {isLoading && <Button className="w-50" disabled>Please wait...</Button>}
+                {!isLoading && <Button className="w-50" onClick={handleRolls} disabled={status == 'Active' ? true : false}>{status == 'Active' ? 'Active' : 'Buy'}</Button>}
             </div>
         </div>
     </div>

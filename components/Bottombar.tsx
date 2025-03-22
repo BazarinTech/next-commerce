@@ -31,12 +31,13 @@ const Bottombar = () => {
   ]
     const pathname = usePathname();
     useEffect(() => {
-      if (pathsHide.indexOf(pathname) > -1) {
-        setIsHide(true)
-      }else{
-        setIsHide(false)
+      // Check if the path is in pathsHide OR starts with "/products/"
+      if (pathsHide.includes(pathname) || pathname.startsWith("/products/")) {
+        setIsHide(true);
+      } else {
+        setIsHide(false);
       }
-    }, [pathname])
+    }, [pathname]);
 
   return (
     <div className={`${isHide ? 'hidden' : 'sticky'} bottom-0 px-2 py-4 border-t-2 border-gray-200 bg-white flex gap-1`}>

@@ -1,48 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import WalletLink from "@/components/WalletLink";
-import { BadgeDollarSign, Banknote, BookUser, CirclePlus, Facebook, Film, HandCoins, Landmark, MessageCircle, MessageCircleQuestion, Music2, SearchSlash, Send, User, WalletCards } from "lucide-react";
+import { BadgeDollarSign, Banknote, BookUser, CirclePlus, Facebook, Film, HandCoins, Landmark, LogOut, MessageCircle, MessageCircleQuestion, Music2, SearchSlash, Send, User, WalletCards } from "lucide-react";
 import Link from "next/link";
+import WalletComp from "./WalletComp";
+import Logout from "./Logout";
 
 const Page = () => {
   return (
     <div>
-      <div className="w-full p-4">
-        <div className="w-full bg-black px-4 rounded-lg">
-          <div className="flex items-center justify-between border-b-2 border-dashed border-gray-400 py-4">
-            <div className="block">
-              <h2 className="text-white text-3xl font-bold">Balance</h2>
-              <div className="flex gap-1 my-2">
-                <p className="text-lg text-gray-300">Kes 1,000.00</p>
-              </div>
-            </div>
-            <Link href="/deposit" className="block">
-              <Button variant="secondary" size="sm">
-                <CirclePlus />
-                Add Funds
-              </Button>
-            </Link>
-          </div>
-
-          <div className="flex py-4">
-            <div className="block w-full">
-              <div className="my-2 flex items-center justify-between w-full">
-                <div className="block">
-                  <h2 className="text-white text-lg font-bold">Total Income</h2>
-                  <p className="text-sm text-gray-300">Kes 1,550.00</p>
-                </div>
-
-                <Separator orientation="vertical" className="bg-gray-300 h-full w-[2px]" />
-
-                <div className="block">
-                  <h2 className="text-white text-lg font-bold">Available Rolls</h2>
-                  <p className="text-sm text-gray-300">3</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <WalletComp />
       <div className="w-full p-4">
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Payment Services</h2>
@@ -70,6 +37,7 @@ const Page = () => {
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Profile Actions</h2>
           <WalletLink link="/account" name="Account Details" icon={<User />} />
+          <Logout name="Logout" icon={<LogOut />} />
         </div>
       </div>
     </div>

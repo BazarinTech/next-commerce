@@ -12,15 +12,20 @@ import {
   
   type Props = {
     open: boolean
-    setOpen: (open: boolean) => void
+    setOpen: (open: boolean) => void,
+    handleGrab: () => void,
+    setProgress: (progress: number) => void,
+    progress: number
   }
   
-  export function AlertDialogDemo({ open, setOpen }: Props) {
-    const [progress, setProgress] = useState(13)
+  export function AlertDialogDemo({ open, setOpen, handleGrab, setProgress, progress }: Props) {
   
     useEffect(() => {
       if (open) {
-        const timer = setTimeout(() => setProgress(100), 5000)
+        const timer = setTimeout(() => {
+          setProgress(100)
+          handleGrab()
+        }, 5000)
         return () => clearTimeout(timer)
       }
     }, [open])
@@ -32,11 +37,10 @@ import {
             <AlertDialogTitle>Grabbing initiating...</AlertDialogTitle>
             <AlertDialogDescription className="text-lg ">
               Please wait for the process to complete.
-              <Progress value={progress} className="w-[100%] my-5" />
             </AlertDialogDescription>
           </AlertDialogHeader>
+          <Progress value={progress} className="w-[100%] my-5" />
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => setOpen(false)}>Cancel Process</AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

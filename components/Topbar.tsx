@@ -21,10 +21,11 @@ const Topbar = () => {
   ]
   const pathname = usePathname();
   useEffect(() => {
-    if (pathsHide.indexOf(pathname) > -1) {
-      setIsHide(true)
-    }else{
-      setIsHide(false)
+     // Check if the path is in pathsHide OR starts with "/products/"
+     if (pathsHide.includes(pathname) || pathname.startsWith("/products/")) {
+      setIsHide(true);
+    } else {
+      setIsHide(false);
     }
     if (pathname == '/orders') {
       setTitle('Grabs List')

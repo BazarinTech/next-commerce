@@ -8,7 +8,7 @@ type Props = {
     price?: number,
     image?: string,
     gains?: number,
-    status: 'Success' | 'Failed',
+    status: string,
     date?: string,
 }
 

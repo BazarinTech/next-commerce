@@ -1,17 +1,23 @@
-import Image from 'next/image'
-import prod from "@/public/images/shoes-1.png"
-import { ShoppingBag } from 'lucide-react'
-import ProdIncrement from '@/components/productDetails/ProdIncrement'
 import ProdPage from '@/components/productDetails/prodPage'
+import getProduct from '@/lib/getProduct'
+import { Metadata } from 'next'
+
 
 type Props = {
   params: {
     prodID: string
   }
 }
-
-function page({params: {prodID}}: Props) {
-  return <ProdPage />
+export async function generateMetadata({params: {prodID}}:Props):Promise<Metadata> {
+  const prod =  await getProduct({prodID})
+  return {
+    title: prod.title,
+    description: prod.description,
+  }
+}
+async function page({params: {prodID}}: Props) {
+  const product =  await getProduct({prodID})
+  return <ProdPage product={product}/>
 }
 
 export default page

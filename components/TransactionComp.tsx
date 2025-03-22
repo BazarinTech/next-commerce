@@ -1,3 +1,5 @@
+import useFormat from "@/lib/useFormat"
+
 type Props = {
     type: string,
     status: 'Success' | 'Pending' | 'Failed',
@@ -14,7 +16,7 @@ function TransactionComp({type, status, dateJoined, amount}: Props) {
         </div>
         <div className="block max-w-1/3">
             <p className="font-bold">Amount</p>
-            <p className="text-gray-400 text-sm">Kes {amount}</p>
+            <p className="text-gray-400 text-sm">Kes { useFormat({value: amount})}</p>
         </div>
     </div>
   )

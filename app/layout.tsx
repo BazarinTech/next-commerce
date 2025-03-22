@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import Topbar from "@/components/Topbar";
 import Bottombar from "@/components/Bottombar";
 import Topbar2 from "@/components/Topbar2";
+import { Toaster } from "@/components/ui/sonner";
+import { AuthProvider } from "@/contexts/AuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,14 +32,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased grid place-items-center box-border overflow-x-hidden font-[family-name:var(--font-geist-sans)]`}
       >
-        <div className="max-w-6xl w-full">
-          <Topbar />
-          <Topbar2 />
-          <div className="min-h-screen">
-            {children}
+        <AuthProvider>
+          <div className="max-w-6xl w-full">
+            <Topbar />
+            <Topbar2 />
+            <div className="min-h-screen">
+              {children}
+            </div>
+            <Bottombar />
+            <Toaster richColors position="top-right" />
           </div>
-          <Bottombar />
-        </div>
+        </AuthProvider>
+
       </body>
     </html>
   );

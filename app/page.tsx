@@ -4,8 +4,11 @@ import Image from "next/image";
 import hero from "@/public/images/next-hero.png"
 import Link from "next/link";
 import Product from "@/components/Product";
+import getProducts from "@/lib/getProducts";
 
-export default function Home() {
+export default async function Home() {
+  const products = await getProducts();
+  
   return (
     <div className="">
 
@@ -86,15 +89,11 @@ export default function Home() {
           <p className="text-lg">Products</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 w-full place-items-center gap-4 sm:gap-1">
-          <Product price={500} title="Shoe single learther"/>
-          <Product price={500} title="Shoe single learther (with one)"/>
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {products.map((product) => {
+            return(
+              <Product price={product.price} key={product.id} title={product.title} image={product.image} gains={product.income} grabs={product.grabs} id={product.id} />
+            )
+          })}
         </div>
       </div>
     </div>

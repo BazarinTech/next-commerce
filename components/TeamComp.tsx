@@ -1,3 +1,5 @@
+import useFormat from "@/lib/useFormat"
+
 type Props = {
     email: string,
     status: 'Active' | 'Inactive',
@@ -14,7 +16,7 @@ function TeamComp({email, status, dateJoined, totalEarnings}: Props) {
         </div>
         <div className="block max-w-1/3">
             <p className="font-bold">Commission</p>
-            <p className="text-gray-400 text-sm">Kes {totalEarnings}</p>
+            <p className="text-gray-400 text-sm">Kes {useFormat({value: totalEarnings})}</p>
         </div>
     </div>
   )

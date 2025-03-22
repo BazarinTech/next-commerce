@@ -2,6 +2,7 @@ import Image from "next/image"
 import prod from "@/public/images/shoes-1.png"
 import { ShoppingBag } from "lucide-react"
 import Link from "next/link"
+import useFormat from "@/lib/useFormat"
 
 type Props = {
     title?: string,
@@ -9,11 +10,12 @@ type Props = {
     image?: string,
     gains?: number,
     grabs?: number,
+    id: number,
 }
 
-function Product({title, price, image, gains, grabs}: Props) {
+function Product({title, price, image, gains, grabs, id}: Props) {
   return (
-    <Link href='/products/2' className="w-full sm:w-1/2 h-full">
+    <Link href={`/products/${id}`} className="w-full sm:w-1/2 h-full">
         <div className="w-full h-50 bg-gray-300 grid place-items-center rounded-lg">
             <Image 
                 src={image ? image :prod}
@@ -30,9 +32,9 @@ function Product({title, price, image, gains, grabs}: Props) {
                 <p className="text-sm text-gray-500">{ grabs ? grabs : '100'} grabs</p>
             </div>
             <div className="flex gap-1 items-center bg-green-500/30 w-fit px-3 py-1 rounded-lg">
-                <p className="text-sm text-green-900 font-bold">+Kes {gains ? gains :'10,080.00'}</p>
+                <p className="text-sm text-green-900 font-bold">+Kes {gains ? useFormat({value: gains}) :'10,080.00'}</p>
             </div>
-            <h2 className="text-lg font-bold py-2">Kes {price ? price : '1,000,080.00'}</h2>
+            <h2 className="text-lg font-bold py-2">Kes {price ? useFormat({value: price}): '1,000,080.00'}</h2>
         </div>
     </Link>
   )
