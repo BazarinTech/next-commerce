@@ -1,6 +1,6 @@
 import DepositDetails from "./DepositDetails"
 
-
+export const dynamic = "force-dynamic"; // 👈 Forces SSR
 
 function page() {
   return (

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import RegisterForm from './RegisterForm'
 import { Suspense } from 'react'
 
+export const dynamic = "force-dynamic"; // 👈 Forces SSR
+
 function page() {
   return (
     <div className='w-full place-items-center'>

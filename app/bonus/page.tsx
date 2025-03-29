@@ -1,5 +1,6 @@
 import Bonus from "./Bonus"
 
+export const dynamic = "force-dynamic"; // 👈 Forces SSR
 
 function page() {
   return (

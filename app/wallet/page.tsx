@@ -3,6 +3,8 @@ import { BadgeDollarSign, Banknote, Facebook, HandCoins, Landmark, LogOut, Messa
 import WalletComp from "./WalletComp";
 import Logout from "./Logout";
 
+export const dynamic = "force-dynamic"; // 👈 Forces SSR
+
 const Page = () => {
   return (
     <div>

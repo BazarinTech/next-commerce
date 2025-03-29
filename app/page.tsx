@@ -6,6 +6,8 @@ import Link from "next/link";
 import Product from "@/components/Product";
 import getProducts from "@/lib/getProducts";
 
+export const dynamic = "force-dynamic"; // 👈 Forces SSR
+
 export default async function Home() {
   const products = await getProducts();
   

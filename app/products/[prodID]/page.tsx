@@ -2,12 +2,12 @@ import ProdPage from '@/components/productDetails/prodPage'
 import getProduct from '@/lib/getProduct'
 import { Metadata } from 'next'
 
-// ✅ Define 'params' as a plain object
+export const dynamic = "force-dynamic"; 
+
 type Props = {
   params: Promise<{prodID: string}>
 }
 
-// ✅ Ensure 'params' is destructured correctly
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { prodID } = await params
   const prod = await getProduct({ prodID })

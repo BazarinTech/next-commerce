@@ -2,6 +2,8 @@ import { Button } from '@/components/ui/button'
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@/components/ui/input-otp'
 import Link from 'next/link'
 
+export const dynamic = "force-dynamic"; // 👈 Forces SSR
+
 function page() {
   return (
     <div className='w-full max-w-xl grid place-items-center mt-5'>

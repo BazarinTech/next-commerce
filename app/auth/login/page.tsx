@@ -2,6 +2,8 @@
 import Link from 'next/link'
 import LoginForm from './LoginForm'
 
+export const dynamic = "force-dynamic"; // 👈 Forces SSR
+
 function page() {
   return (
     <div className='w-full place-items-center'>
