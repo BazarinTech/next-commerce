@@ -1,6 +1,7 @@
 
 import Link from 'next/link'
 import RegisterForm from './RegisterForm'
+import { Suspense } from 'react'
 
 function page() {
   return (
@@ -9,7 +10,9 @@ function page() {
         <div className="block w-full my-2">
           <p className="text-xl font-bold my-1">Create a new account</p>
           <p className="text-gray-500 my-1">Already have an account? <Link href='/auth/login' className='text-blue-500 font-bold'>Login</Link></p>
-          <RegisterForm  />
+          <Suspense fallback={<div>Loading...</div>}>
+           <RegisterForm />
+          </Suspense>
         </div>
       </div>
     </div>
