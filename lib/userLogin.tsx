@@ -43,7 +43,7 @@ async function userLogin({ email, password, setIsLoading }: Props): Promise<Resu
         }
     }
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/next_backend/main/login.php`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/next_backend/main/login.php`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify({ email, password })

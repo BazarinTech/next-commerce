@@ -3,7 +3,7 @@ type Props = {
 }
 
 export default async function getProduct({prodID}: Props): Promise<Products> {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/next_backend/main/product.php`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/next_backend/main/product.php`, {
         method: 'Post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({prodID})

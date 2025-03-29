@@ -6,9 +6,7 @@ import getRolls from "@/lib/getRolls"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
-type Props = {}
-
-export default function List({}: Props) {
+export default function List() {
     const { email } = useAuth()
     const [rolls, setRolls] = useState<Roll[]>([])
     const router = useRouter()
@@ -23,7 +21,7 @@ export default function List({}: Props) {
         }else{
             router.push('/auth/login')
         }
-    }, [])
+    }, [email, router])
   return (
     <div className="w-full grid place-items-center px-4 py-1">
         {rolls.map((roll) => {

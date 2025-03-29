@@ -1,6 +1,6 @@
 'use client'
 
-import { CalendarMinus2, DollarSign, Hand } from "lucide-react"
+import { Hand } from "lucide-react"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import useFormat from "@/lib/useFormat"
@@ -26,7 +26,6 @@ type PostData = {
 }
 
 function RollProd({title, price, image, rolls, status, id, email}: Props) {
-    const prod = "/images/beginner-1.png"
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [postData, setPostData] = useState<PostData>({
         id: id,

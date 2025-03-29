@@ -4,7 +4,7 @@ type Props = {
 }
 
 export default async function getBonus({email}: Props): Promise<Bonus[]> {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/next_backend/main/getBonus.php`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/next_backend/main/getBonus.php`, {
         method: 'Post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email})

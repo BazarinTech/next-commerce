@@ -86,7 +86,7 @@ async function userRegister({ name, email, phone, password, conPassword, setIsLo
         }
     }
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/next_backend/main/register.php`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/next_backend/main/register.php`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify({ name, email, phone, password, conPassword, upline })

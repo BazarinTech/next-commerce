@@ -10,11 +10,9 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
-type Props = {}
-
-export default function WalletComp({}: Props) {
+export default function WalletComp() {
     const [wallet, setWallet] = useState<Wallet | null>(null)
-        const { email, logout } = useAuth()
+        const { email } = useAuth()
         const router = useRouter()
         
         const fetchWallet = async (email: string)  => {
@@ -27,7 +25,10 @@ export default function WalletComp({}: Props) {
             }else{
                 router.push('/auth/login')
             }
-        }, [email])
+        }, [email, router])
+    // 🛠️ Call useFormat outside JSX to prevent conditional hook calls
+    const formattedBalance = useFormat({ value: wallet?.balance || 0.00 })
+    const formattedIncome = useFormat({ value: wallet?.total_income || 0.00 })
   return (
     <div className="w-full p-4">
         <div className="w-full bg-black px-4 rounded-lg">
@@ -35,7 +36,7 @@ export default function WalletComp({}: Props) {
             <div className="block">
               <h2 className="text-white text-3xl font-bold">Balance</h2>
               <div className="flex gap-1 my-2">
-                <p className="text-lg text-gray-300">Kes {wallet ? useFormat({value: wallet.balance}) : 0.00}</p>
+                <p className="text-lg text-gray-300">Kes {formattedBalance}</p>
               </div>
             </div>
             <Link href="/deposit" className="block">
@@ -51,7 +52,7 @@ export default function WalletComp({}: Props) {
               <div className="my-2 flex items-center justify-between w-full">
                 <div className="block">
                   <h2 className="text-white text-lg font-bold">Total Income</h2>
-                  <p className="text-sm text-gray-300">Kes {wallet ? useFormat({value: wallet.total_income}) : 0.00}</p>
+                  <p className="text-sm text-gray-300">Kes {formattedIncome}</p>
                 </div>
 
                 <Separator orientation="vertical" className="bg-gray-300 h-full w-[2px]" />

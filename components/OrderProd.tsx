@@ -1,6 +1,6 @@
 'use client'
 
-import { CalendarMinus2, DollarSign, ShoppingBag } from "lucide-react"
+import { CalendarMinus2, DollarSign } from "lucide-react"
 import Image from "next/image"
 
 type Props = {

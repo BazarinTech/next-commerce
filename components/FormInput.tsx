@@ -19,11 +19,12 @@ type Props = {
   className?: string
   width?: string
   handleInput? :(e: React.ChangeEvent<HTMLInputElement>) => void,
-  error?: Error[]
+  error?: Error[],
+  readOnly?: boolean
 
 }
 
-const FormInput = ({ label, name, type, value, placeholder, className, width, handleInput, error }: Props) => {
+const FormInput = ({ label, name, type, value, placeholder, className, width, handleInput, error, readOnly }: Props) => {
   const [showPassword, setShowPassword] = useState(false)
 
   const togglePasswordVisibility = () => {
@@ -37,7 +38,7 @@ const FormInput = ({ label, name, type, value, placeholder, className, width, ha
     <div className={`grid ${width ? width : "w-80"} items-center gap-1.5 py-2 ${className && className}`}>
       {label && <Label htmlFor={name}>{label}</Label>}
       <div className="relative">
-        <Input onChange={handleInput} type={inputType} name={name} id={name} placeholder={placeholder ? placeholder : ""} value={value} readOnly={value && !handleInput ? true : false}/>
+        <Input onChange={handleInput} type={inputType} name={name} id={name} placeholder={placeholder ? placeholder : ""} value={value} readOnly={readOnly}/>
         {isPassword && (
           <button
             type="button"

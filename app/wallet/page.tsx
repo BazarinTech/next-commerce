@@ -1,8 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import WalletLink from "@/components/WalletLink";
-import { BadgeDollarSign, Banknote, BookUser, CirclePlus, Facebook, Film, HandCoins, Landmark, LogOut, MessageCircle, MessageCircleQuestion, Music2, SearchSlash, Send, User, WalletCards } from "lucide-react";
-import Link from "next/link";
+import { BadgeDollarSign, Banknote, Facebook, HandCoins, Landmark, LogOut, MessageCircle, MessageCircleQuestion, Music2, SearchSlash, Send, User, WalletCards } from "lucide-react";
 import WalletComp from "./WalletComp";
 import Logout from "./Logout";
 

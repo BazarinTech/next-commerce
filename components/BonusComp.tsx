@@ -17,15 +17,15 @@ type Props = {
 
 }
 
-const BonusComp = ({name, status, bonus, type, target, reached, target_type, id, email}: Props) => {
+const BonusComp = ({name, status, bonus, type, target, reached,  id, email}: Props) => {
     const progressVal = (reached / target) * 100
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    const [postData, setPostData] = useState<BonusOrder>({
+    const postData: BonusOrder = {
         id: id,
         reward: bonus,
         reward_type: type,
         user: email
-    })
+    }
 
     const handleOrder = async () => {
         setIsLoading(true)
@@ -34,9 +34,9 @@ const BonusComp = ({name, status, bonus, type, target, reached, target_type, id,
             setIsLoading(false)
             if (res.status == 'Success') {
                 toast.success(res.message)
-            }else[
+            }else{
                 toast.error(res.message)
-            ]
+            }
         }else{
             toast.error('You have not reached the target yet')
             setIsLoading(false)

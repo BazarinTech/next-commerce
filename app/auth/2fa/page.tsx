@@ -8,7 +8,7 @@ function page() {
       <div className="full place-items-center">
         <div className="w-full px-6 py-4">
           <p className="text-lg font-bold text-center">Enter 6 digit Code we sent to your Phone</p>
-          <p className="text-gray-500 text-center">Didn't get code? <Link href="/auth/login" className="text-blue-500 font-bold">Resend</Link> in 30.0 seconds</p>
+          <p className="text-gray-500 text-center">Didn&lsquo;t get code? <Link href="/auth/login" className="text-blue-500 font-bold">Resend</Link> in 30.0 seconds</p>
         </div>
         <InputOTP maxLength={6} className='my-2'>
           <InputOTPGroup>

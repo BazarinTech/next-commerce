@@ -17,9 +17,7 @@ type Order = {
     image: string
 }
 
-type Props = {}
-
-export default function OrderList({}: Props) {
+export default function OrderList() {
     const [orders, setOrders] = useState<Order[]>([])
     const { email } = useAuth()
     const router = useRouter()
@@ -34,7 +32,7 @@ export default function OrderList({}: Props) {
         }else{
             router.push('/auth/login')
         }
-    }, [email])
+    }, [email, router])
   return (
     <div>
         {orders.map((order) => {

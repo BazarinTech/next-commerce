@@ -14,6 +14,9 @@ type Props = {
 }
 
 function Product({title, price, image, gains, grabs, id}: Props) {
+    // 🛠️ Call useFormat outside JSX to prevent conditional hook calls
+    const foramettedGains = useFormat({ value: gains || 0.00 })
+    const formattedPrice = useFormat({ value: price || 0.00 })
   return (
     <Link href={`/products/${id}`} className="w-full sm:w-1/2 h-full">
         <div className="w-full h-50 bg-gray-300 grid place-items-center rounded-lg">
@@ -32,9 +35,9 @@ function Product({title, price, image, gains, grabs, id}: Props) {
                 <p className="text-sm text-gray-500">{ grabs ? grabs : '100'} grabs</p>
             </div>
             <div className="flex gap-1 items-center bg-green-500/30 w-fit px-3 py-1 rounded-lg">
-                <p className="text-sm text-green-900 font-bold">+Kes {gains ? useFormat({value: gains}) :'10,080.00'}</p>
+                <p className="text-sm text-green-900 font-bold">+Kes {foramettedGains}</p>
             </div>
-            <h2 className="text-lg font-bold py-2">Kes {price ? useFormat({value: price}): '1,000,080.00'}</h2>
+            <h2 className="text-lg font-bold py-2">Kes {formattedPrice}</h2>
         </div>
     </Link>
   )

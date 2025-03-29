@@ -25,7 +25,7 @@ export default function WithdrawDetails() {
         }else{
             router.push('/auth/login')
         }
-    }, [])
+    }, [email, router])
 
     const handleDeposit = async () => {
         setIsLoading(true)

@@ -9,7 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import AlertComp from "./AlertComp"
 
 type Props = {
     children: React.ReactNode,

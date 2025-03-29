@@ -4,7 +4,7 @@ type Props = {
 }
 
 export default async function getTeam({email}: Props): Promise<TeamResponse> {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/next_backend/main/getTeam.php`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/next_backend/main/getTeam.php`, {
         method: 'Post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email})

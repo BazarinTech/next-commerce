@@ -26,7 +26,7 @@ export default function DepositDetails() {
         }else{
             router.push('/auth/login')
         }
-    }, [])
+    }, [email, router])
 
     const handleDeposit = async () => {
         setIsLoading(true)

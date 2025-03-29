@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from "react"
-
 type Props = {
     setCount: (count: number) => void;
     count: number;

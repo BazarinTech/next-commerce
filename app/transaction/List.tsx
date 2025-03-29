@@ -28,7 +28,7 @@ export default function List() {
         }else{
             router.push('/auth/login')
         }
-    }, [])
+    }, [email, router])
   return (
     <div>
         <div className="w-full p-4">

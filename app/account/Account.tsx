@@ -21,7 +21,7 @@ type Error = {
 }
 
 export default function Account() {
-    const { email, logout } = useAuth()
+    const { email } = useAuth()
     const router = useRouter()
     const [formData, setFormData] = useState<AccountData>({
         name: '',
@@ -50,22 +50,25 @@ export default function Account() {
     }
     useEffect(() => {
         const fetchAccount = async (email: string) => {
-            const res = await getAccount({email})
-            setFormData({...formData, ...res, email})
-        }
+            const res = await getAccount({ email });
+            setFormData((prev) => ({ ...prev, ...res, email })); // Functional update
+        };
+    
         if (email) {
-            fetchAccount(email)
-        }else{
-            router.push('/auth/login')
+            fetchAccount(email);
+        } else {
+            router.push('/auth/login');
         }
-    }, [])
+    }, [email, router]); // ✅ Only essential dependencies
+    
+    
 
   return (
     <div>
         <div className="w-full grid place-items-center my-5">
         <FormInput label='Names' name='name' type='text' placeholder='kyden mamushi' className='my-1' value={formData.name} handleInput={handleInput} error={response.error} />
-        <FormInput label='Email' name='email' type='email' placeholder='kyden@gmail.com' className='my-1' value={formData.email} />
-        <FormInput label='Phone' name='phone' type='tel' placeholder='0712345678' className='my-1' value={formData.phone} />
+        <FormInput label='Email' name='email' type='email' placeholder='kyden@gmail.com' className='my-1' value={formData.email} readOnly={true} />
+        <FormInput label='Phone' name='phone' type='tel' placeholder='0712345678' className='my-1' value={formData.phone} readOnly={true} />
         <div className="w-80 my-2">
           <p className="text-gray-500">Change Password</p>
         </div>

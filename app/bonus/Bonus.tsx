@@ -22,7 +22,7 @@ export default function Bonus() {
         }else{
             router.push('/auth/login')
         }
-    }, [])
+    }, [email,router])
   return (
     <div>
         <div className="w-full grid place-items-center px-4 py-2">

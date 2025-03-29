@@ -11,9 +11,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
 
-type Props = {}
-
-function BankDetails({}: Props) {
+function BankDetails() {
     const router = useRouter()
     const { email } = useAuth()
     const [bankDetails, setBankDetails] = useState<BankDetails | null>({
@@ -51,7 +49,7 @@ function BankDetails({}: Props) {
         }else{
             router.push('/auth/login')
         }
-    }, [])
+    }, [email, router])
 
     useEffect(() => {
         setInputForm({
@@ -97,7 +95,7 @@ function BankDetails({}: Props) {
         title='Deposit Account' 
         description='Make sure to enter valid Mpesa account details for toping up your account!' 
         trigger={<Button className='my-4'>Set Up Deposit Account</Button>} 
-        footer={ withIsloading ? <Button type="submit" disabled>Saving...</Button> : <Button type="submit" onClick={() => handleSaveChanges('Deposit')}>Save changes</Button>}
+        footer={ depIsloading ? <Button type="submit" disabled>Saving...</Button> : <Button type="submit" onClick={() => handleSaveChanges('Deposit')}>Save changes</Button>}
         >
         <div className="grid gap-4 py-4 ">
           <div className="grid grid-cols-4 items-center gap-4">

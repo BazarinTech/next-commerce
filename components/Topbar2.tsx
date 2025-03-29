@@ -5,10 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-type Props = {
-    title?: string
-}
-const Topbar2 = ({title}: Props) => {
+const Topbar2 = () => {
     const navDetails = [
         { name: "Bank", href: "/bank"},
         { name: "Bonus", href: "/bonus"},

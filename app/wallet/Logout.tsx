@@ -10,7 +10,7 @@ type Props = {
 }
 
 function Logout({name, icon}: Props) {
-    const { email, logout } = useAuth()
+    const { logout } = useAuth()
     const router = useRouter()
     const handleLogout = () => {
         logout()
