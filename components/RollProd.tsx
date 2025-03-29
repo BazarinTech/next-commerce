@@ -12,7 +12,7 @@ import getRolls from "@/lib/getRolls"
 type Props = {
     title?: string,
     price: number,
-    image?: string,
+    image: string,
     rolls?: number,
     status: 'Active' | 'Buy',
     email: string | null,
@@ -55,7 +55,7 @@ function RollProd({title, price, image, rolls, status, id, email}: Props) {
     <div className="bg-white w-full rounded-lg py-2 px-4 grid place-items-center my-3">
         <div className="bg-gray-300 w-full h-50 sm:h-fit rounded-lg overflow-hidden">
             <Image 
-                src={image ? image : prod}
+                src={image}
                 alt="shoes"
                 width={500}
                 height={500}

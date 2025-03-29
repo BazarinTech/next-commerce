@@ -28,7 +28,7 @@ export default function List({}: Props) {
     <div className="w-full grid place-items-center px-4 py-1">
         {rolls.map((roll) => {
             return(
-                <RollProd status={roll.status} title={roll.name} price={roll.cost} rolls={roll.rolls} key={roll.id} email={email} id={roll.id}/>
+                <RollProd status={roll.status} title={roll.name} price={roll.cost} rolls={roll.rolls} key={roll.id} email={email} id={roll.id} image={roll.media}/>
             )
         })}
         

@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "localhost",
+        hostname: "backend.nextco.africa",
         port: "", // Leave empty if using default port 80
-        pathname: "/next_backend/media/**",
+        pathname: "/admin/uploads/**",
       },
     ],
   },

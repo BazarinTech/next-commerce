@@ -11,7 +11,7 @@ function page() {
         <div className="w-full bg-white rounded-lg px-4 py-2">
           <p className="text-xl font-bold my-2">Introduction</p>
           <p className="text-gray-500">
-          TechFusion Solutions Inc. ("we", "our", "us") respects your privacy and is committed to protecting it through our compliance with this policy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our SaaS product, TechFusion Suite, available at www.techfusion.com (the "Site") or through our applications and services (collectively, "Services"). Please read this privacy policy carefully to understand our policies and practices regarding your information and how we will treat it.
+          Next Commerce Limited is a leading e-commerce company in Bangladesh. It was founded in 2013 by a group of young entrepreneurs who wanted to create a platform where customers could buy products online with ease. The company started with a small team and a limited product range, but it quickly gained popularity and expanded its operations to become one of the largest e-commerce companies in the country.
           </p>
         </div>
       </div>
@@ -19,7 +19,7 @@ function page() {
         <div className="w-full bg-white rounded-lg px-4 py-2">
           <p className="text-xl font-bold my-2">Income Model</p>
           <p className="text-gray-500">
-          TechFusion Solutions Inc. ("we", "our", "us") respects your privacy and is committed to protecting it through our compliance with this policy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our SaaS product, TechFusion Suite, available at www.techfusion.com (the "Site") or through our applications and services (collectively, "Services"). Please read this privacy policy carefully to understand our policies and practices regarding your information and how we will treat it.
+           Next Commerce Limited generates revenue through various channels, including: <br/> <ul className="my-5"> <li>Commission on sales</li> <li>Advertising</li> <li>Payment processing fees</li> </ul>  <br/> The company also offers various services, such as product delivery, customer support, and payment processing, which generate additional revenue streams.
           </p>
         </div>
       </div>
