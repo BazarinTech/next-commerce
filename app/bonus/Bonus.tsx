@@ -27,7 +27,7 @@ export default function Bonus() {
     <div>
         <div className="w-full grid place-items-center px-4 py-2">
             {bonus.map((item) => {
-                return <BonusComp name={item.name} bonus={item.reward} target_type={item.target_type} type={item.reward_type} status={item.status} target={5} reached={5} key={item.id} email={email} id={item.id} />
+                return <BonusComp name={item.name} bonus={item.reward} target_type={item.target_type} type={item.reward_type} status={item.status} target={item.target} reached={item.reached} key={item.id} email={email} id={item.id} />
             })}
         
       </div>
