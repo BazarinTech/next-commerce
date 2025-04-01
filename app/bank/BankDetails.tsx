@@ -63,30 +63,52 @@ function BankDetails() {
         setInputForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
-    const handleSaveChanges = async (type: string) => {
-        if (type == 'Deposit') {
-            setDepIsloading(true)
-            setDataPost({...dataPost, type, email, name: inputForm.dep_name, account: inputForm.dep_account})
-            const res = await createBankWallet({...dataPost})
-            setDepIsloading(false)
-            if (res.status == 'Success') {
-                toast.success(res.message)
-            }else{
-                toast.error(res.message)
-            }
-        }else{
-            // Withdraw
-            setWithIsloading(true)
-            setDataPost({...dataPost, type, email, name: inputForm.with_name, account: inputForm.with_account})
-            const res = await createBankWallet({...dataPost})
-            setWithIsloading(false)
-            if (res.status == 'Success') {
-                toast.success(res.message)
-            }else{
-                toast.error(res.message)
-            }
+    useEffect(() => {
+        setDataPost((prev) => ({
+            ...prev,
+            email,
+            name: inputForm.dep_name || inputForm.with_name,
+            account: inputForm.dep_account || inputForm.with_account,
+        }));
+    }, [inputForm, email]);
+
+    const handleDepChanges = async () => {
+        setDepIsloading(true);
+    
+        const res = await createBankWallet({
+            type: 'Deposit',
+            email,
+            name: inputForm.dep_name,
+            account: inputForm.dep_account
+        });
+    
+        setDepIsloading(false);
+    
+        if (res.status === 'Success') {
+            toast.success(res.message);
+        } else {
+            toast.error(res.message);
         }
-    }
+    };
+    
+    const handleWithChanges = async () => {
+        setWithIsloading(true);
+    
+        const res = await createBankWallet({
+            type: 'Withdraw',
+            email,
+            name: inputForm.with_name,
+            account: inputForm.with_account
+        });
+    
+        setWithIsloading(false);
+    
+        if (res.status === 'Success') {
+            toast.success(res.message);
+        } else {
+            toast.error(res.message);
+        }
+    };
 
   return (
     <div className='w-full grid place-items-center'>
@@ -95,7 +117,7 @@ function BankDetails() {
         title='Deposit Account' 
         description='Make sure to enter valid Mpesa account details for toping up your account!' 
         trigger={<Button className='my-4'>Set Up Deposit Account</Button>} 
-        footer={ depIsloading ? <Button type="submit" disabled>Saving...</Button> : <Button type="submit" onClick={() => handleSaveChanges('Deposit')}>Save changes</Button>}
+        footer={ depIsloading ? <Button type="submit" disabled>Saving...</Button> : <Button type="submit" onClick={() => handleDepChanges()}>Save changes</Button>}
         >
         <div className="grid gap-4 py-4 ">
           <div className="grid grid-cols-4 items-center gap-4">
@@ -109,9 +131,9 @@ function BankDetails() {
 
         <DialogComp  
         title='Withdrawal Account' 
-        description='Make sure to enter valid Mpesa account details for recievin money!' 
+        description='Make sure to enter valid Mpesa account details for recieving money!' 
         trigger={<Button className='my-4'>Set Up Withdrawal Account</Button>} 
-        footer={ withIsloading ? <Button type="submit" disabled>Saving...</Button> : <Button type="submit" onClick={() => handleSaveChanges('Withdraw')}>Save changes</Button>}
+        footer={ withIsloading ? <Button type="submit" disabled>Saving...</Button> : <Button type="submit" onClick={() => handleWithChanges()}>Save changes</Button>}
         >
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
