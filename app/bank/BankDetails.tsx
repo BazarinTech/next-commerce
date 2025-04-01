@@ -27,12 +27,6 @@ function BankDetails() {
             with_name: '',
             with_account: '',
     })
-    const [dataPost, setDataPost] = useState<BankPost>({
-        type: '',
-        email: '',
-        name: '',
-        account: '',
-    })
     const [depIsloading, setDepIsloading] = useState<boolean>(false)
     const [withIsloading, setWithIsloading] = useState<boolean>(false)
 
@@ -63,14 +57,6 @@ function BankDetails() {
         setInputForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
-    useEffect(() => {
-        setDataPost((prev) => ({
-            ...prev,
-            email,
-            name: inputForm.dep_name || inputForm.with_name,
-            account: inputForm.dep_account || inputForm.with_account,
-        }));
-    }, [inputForm, email]);
 
     const handleDepChanges = async () => {
         setDepIsloading(true);
