@@ -13,13 +13,15 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Provider Component
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [email, setEmail] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>('Bug');
 
   useEffect(() => {
     // Load token from localStorage when app starts
     const storedToken = localStorage.getItem("udmddbhabdg73r83yr5y3");
     if (storedToken) {
       setEmail(storedToken);
+    }else{
+      setEmail(null);
     }
   }, []);
 
