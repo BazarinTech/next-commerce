@@ -1,11 +1,11 @@
 'use client'
 
 import {MoveLeft } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Topbar2 = () => {
+  const router = useRouter();
     const navDetails = [
         { name: "Bank", href: "/bank"},
         { name: "Bonus", href: "/bonus"},
@@ -39,9 +39,9 @@ const Topbar2 = () => {
   return (
     <div className={`${isHide ? 'hidden' : 'sticky'} border-b-2 border-gray-200 px-4 py-4 bg-white/50 z-10 backdrop-blur-lg top-0`}>
         <p className="text-2xl text-justify font-bold flex gap-2 items-center">
-            <Link href="/">
-                <MoveLeft />
-            </Link>
+            <button onClick={() => router.back()} className="cursor-pointer">
+                    <MoveLeft />
+            </button>
 
             {navDetails.map((nav) =>
               pathname === nav.href ? (

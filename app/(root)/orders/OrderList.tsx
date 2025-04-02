@@ -46,7 +46,7 @@ export default function OrderList() {
                 <OrderProd status={order.status} title={order.title} price={order.price} image={order.image} gains={order.income} date={order.time} key={order.id} />
             )
         })}
-        {orders.length === 0 && isLoading === false && <NotAvailble title="Orders"/>}
+        {orders.length === 0 && isLoading === false && <NotAvailble title="Grabbed Orders"/>}
     </div>
   )
 }

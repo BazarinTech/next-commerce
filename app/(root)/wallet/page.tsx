@@ -31,7 +31,7 @@ const Page = () => {
           <WalletLink link="/" name="Join Whatsapp group" icon={<MessageCircle />} />
           <WalletLink link="/" name="Join Telegram Channel" icon={<Send />} />
           <WalletLink link="/" name="TikTok" icon={<Music2 />} />
-          <WalletLink link="/" name="Facebook" icon={<Facebook />} />
+          <WalletLink link="https://www.youtube.com/" name="Facebook" icon={<Facebook />} />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Profile Actions</h2>
