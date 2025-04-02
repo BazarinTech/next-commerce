@@ -15,7 +15,7 @@ export default async function Home() {
   const products = await getProducts();
   
   return (
-    <div className="w-[100vw]">
+    <div className="w-[100vw] sm:w-full">
       <div className="px-2 py-2 w-full mt-5">
         <div className="bg-black rounded-lg px-2 w-full max-h-60 py-2 flex flex-row flex-wrap text-white">
           <div className="block w-2/3">
@@ -50,37 +50,37 @@ export default async function Home() {
         </div>
         <div className="rounded-lg px-4 py-2 border-2 border-gray-200 my-2">
           <div className="flex flex-row gap-2">
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
+            <Link href='/deposit' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
               <p className="text-2xl"><HandCoins size={35} /></p>
               <p className="text-sm">Deposit</p>
             </Link>
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
+            <Link href='/withdraw' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
               <p className="text-2xl"><WalletCards size={35} /></p>
               <p className="text-sm">Withdraw</p>
             </Link>
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
+            <Link href='/transaction' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
               <p className="text-2xl"><Banknote size={35} /></p>
               <p className="text-sm">Transactions</p>
             </Link>
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
+            <Link href='/bonus' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
               <p className="text-2xl"><BadgeDollarSign size={35} /></p>
               <p className="text-sm">Bonus</p>
             </Link>
           </div>
           <div className="flex flex-row gap-2 my-2">
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
+            <Link href='/wallet' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
               <p className="text-2xl"><Wallet size={35} /></p>
               <p className="text-sm">Wallet</p>
             </Link>
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
+            <Link href='/rolls' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
               <p className="text-2xl"><Coins size={35} /></p>
               <p className="text-sm">Rolls</p>
             </Link>
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
+            <Link href='/orders' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
               <p className="text-2xl"><ListOrdered size={35} /></p>
               <p className="text-sm">Orders</p>
             </Link>
-            <Link href='/' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
+            <Link href='/team' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2 rounded-2xl text-gray-500">
               <p className="text-2xl"><UsersRound size={35} /></p>
               <p className="text-sm">Team</p>
             </Link>
@@ -92,7 +92,7 @@ export default async function Home() {
           <p className="text-xl"><ShoppingBasket /></p>
           <p className="text-lg">Products</p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 w-full place-items-center gap-4 sm:gap-1 overflow-hidden">
+        <div className="grid grid-cols-2 sm:grid-cols-2 w-full place-items-center gap-4 sm:gap-1">
           <Suspense fallback={<Load />}>
             {products.map((product) => {
               return(

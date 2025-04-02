@@ -131,15 +131,18 @@ function BankDetails() {
         </div>
         </DialogComp>
       </div>
-      <AlertComp title="About Setting Bank" className="my-2 w-95">
-          <ol className="list-disc list-inside">
-              <li>Make sure to setup the above accounts before doing any transaction</li>
-              <li>Make sure to double check for each account to avoid errors</li>
-              <li>NextCo will not be liable for any errors caused by incorrect account details</li>
-              <li>Your details are encrypted not even our staff can see them</li>
-              <li>Any transaction done will be reflected in your account instantly</li>
-          </ol>
-      </AlertComp>
+      <div className="w-full grid place-items-center">
+        <AlertComp title="About Setting Bank" className="my-2 w-[90%]">
+            <ol className="list-disc list-inside">
+                <li>Make sure to setup the above accounts before doing any transaction</li>
+                <li>Make sure to double check for each account to avoid errors</li>
+                <li>NextCo will not be liable for any errors caused by incorrect account details</li>
+                <li>Your details are encrypted not even our staff can see them</li>
+                <li>Any transaction done will be reflected in your account instantly</li>
+            </ol>
+        </AlertComp>
+      </div>
+
     </div>
   )
 }
