@@ -6,7 +6,6 @@ import Link from "next/link";
 import Product from "@/components/Product";
 import getProducts from "@/lib/getProducts";
 import { Suspense } from "react";
-import Skeleton from "./Load";
 import Load from "./Load";
 import NotAvailble from "@/components/NotAvailble";
 
