@@ -18,14 +18,14 @@ function Product({title, price, image, gains, grabs, id}: Props) {
     const foramettedGains = useFormat({ value: gains || 0.00 })
     const formattedPrice = useFormat({ value: price || 0.00 })
   return (
-    <Link href={`/products/${id}`} className="w-full sm:w-1/2 h-full">
+    <Link href={`/products/${id}`} className="w-full sm:max-w-sm h-full">
         <div className="w-full h-50 bg-gray-300 grid place-items-center rounded-lg">
             <Image 
                 src={image ? image :prod}
                 alt="Product Image"
-                width={300}
-                height={300}
-                className="w-full"
+                width={500}
+                height={500}
+                className="w-full object-cover h-40"
             />
         </div>
         <div className="w-full">
