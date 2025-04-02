@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Topbar from "@/components/Topbar";
 import Bottombar from "@/components/Bottombar";
-import Topbar2 from "@/components/Topbar2";
 import { Toaster } from "@/components/ui/sonner";
 import { AuthProvider } from "@/contexts/AuthProvider";
 
@@ -35,7 +34,6 @@ export default function RootLayout({
         <AuthProvider>
           <div className="max-w-6xl w-full">
             <Topbar />
-            <Topbar2 />
             <div className="min-h-screen">
               {children}
             </div>
