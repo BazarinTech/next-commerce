@@ -5,6 +5,10 @@ import hero from "@/public/images/next-hero.png"
 import Link from "next/link";
 import Product from "@/components/Product";
 import getProducts from "@/lib/getProducts";
+import { Suspense } from "react";
+import Skeleton from "./Load";
+import Load from "./Load";
+import NotAvailble from "@/components/NotAvailble";
 
 export const dynamic = "force-dynamic"; // 👈 Forces SSR
 
@@ -91,11 +95,14 @@ export default async function Home() {
           <p className="text-lg">Products</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 w-full place-items-center gap-4 sm:gap-1">
-          {products.map((product) => {
-            return(
-              <Product price={product.price} key={product.id} title={product.title} image={product.image} gains={product.income} grabs={product.grabs} id={product.id} />
-            )
-          })}
+          <Suspense fallback={<Load />}>
+            {products.map((product) => {
+              return(
+                <Product price={product.price} key={product.id} title={product.title} image={product.image} gains={product.income} grabs={product.grabs} id={product.id} />
+              )
+            })}
+            { products.length === 0 && <NotAvailble title="Products"/>}
+          </Suspense>
         </div>
       </div>
     </div>

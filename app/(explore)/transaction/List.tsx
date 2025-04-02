@@ -7,6 +7,8 @@ import useFormat from "@/lib/useFormat"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
+import Load from "./Load"
+import NotAvailble from "@/components/NotAvailble"
 
 export default function List() {
     const [transactions, setTransactions] = useState<Transactions>({
@@ -17,12 +19,14 @@ export default function List() {
     })
     const { email } = useAuth()
     const router = useRouter()
+    const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
         if (email) {
             const fetchTransactions = async (email: string) => {
                 const res = await getTransactions({email})
                 setTransactions({...transactions, deposits: res.deposits, withdraws: res.withdraws, total_deposits: res.total_deposits, total_withdraws: res.total_withdraws})
+                setIsLoading(false)
             }
             fetchTransactions(email)
         }else{
@@ -73,18 +77,20 @@ export default function List() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="with">
-            {transactions.withdraws?.map((transaction) => {
+            {isLoading ? (<Load />) : transactions.withdraws?.map((transaction) => {
                 return(
                     <TransactionComp type={transaction.type} status={transaction.status} dateJoined={transaction.time} amount={transaction.amount} key={transaction.ID} />
                 )
             })}
+            {transactions.withdraws && transactions.withdraws.length === 0 && isLoading === false && <NotAvailble title="Withdrawals"/>}
         </TabsContent>
         <TabsContent value="deps">
-            {transactions.deposits?.map((transaction) => {
+            {isLoading ? (<Load />) : transactions.deposits?.map((transaction) => {
                 return(
                     <TransactionComp type={transaction.type} status={transaction.status} dateJoined={transaction.time} amount={transaction.amount} key={transaction.ID} />
                 )
             })}
+            {transactions.deposits && transactions.deposits.length === 0 && isLoading === false && <NotAvailble title="Deposits"/>}
         </TabsContent>
       </Tabs>
       </div>

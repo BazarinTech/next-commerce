@@ -7,6 +7,8 @@ import useFormat from "@/lib/useFormat"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
+import Load from "./Load"
+import NotAvailble from "@/components/NotAvailble"
 
 export default function Team() {
     const {email } = useAuth()
@@ -19,11 +21,13 @@ export default function Team() {
         level2_income: 0,
     })
     const router = useRouter()
+    const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
         const fetchTeam = async (email: string) => {
             const res = await getTeam({email});
             setTeam(res)
+            setIsLoading(false)
         }
 
         if (email) {
@@ -86,19 +90,20 @@ export default function Team() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="level1">
-            {team.level1_users?.map((user) => {
+            {isLoading ? (<Load />) : team.level1_users?.map((user) => {
                 return(
                     <TeamComp email={user.email} status={user.status} dateJoined={user.date_joined} totalEarnings={user.comission} key={user.id} />
                 )
             })}
-   
+            {team.level1_users.length === 0 && isLoading === false && <NotAvailble title="Level 1 Users" />}
         </TabsContent>
         <TabsContent value="level2">
-        {team.level2_users?.map((user) => {
+        {isLoading ? (<Load />) : team.level2_users?.map((user) => {
                 return(
                     <TeamComp email={user.email} status={user.status} dateJoined={user.date_joined} totalEarnings={user.comission} key={user.id} />
                 )
             })}
+            {team.level2_users.length === 0 && isLoading === false && <NotAvailble title="Level 2 Users" />}
         </TabsContent>
       </Tabs>
       </div>
