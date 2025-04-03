@@ -205,8 +205,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                    "I've been able to earn extra income on my own schedule. The platform is easy to use and the support
-                    team is always helpful."
+                  &quot;I&rsquo;ve been able to earn extra income on my own schedule. The platform is easy to use and the support
+                    team is always helpful.&quot;
                   </p>
                 </CardContent>
                 <CardFooter>
@@ -225,8 +225,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                    "This platform has been a game-changer for me. I can work around my full-time job and still make
-                    significant extra income."
+                  &quot;This platform has been a game-changer for me. I can work around my full-time job and still make
+                    significant extra income.&quot;
                   </p>
                 </CardContent>
                 <CardFooter>
@@ -245,8 +245,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                    "I love the flexibility and the weekly payments. It's become my main source of income and I couldn't
-                    be happier."
+                  &quot;I love the flexibility and the weekly payments. It&rsquo;s become my main source of income and I couldn&rsquo;t
+                    be happier.&quot;
                   </p>
                 </CardContent>
                 <CardFooter>
