@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { ArrowRight, BadgeCheck, DollarSign, Package, ShoppingBag, Star, Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -7,24 +8,23 @@ const Index = () => {
     <div className="flex min-h-screen w-full flex-col overflow-x-hidden">
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="h-5 w-5 sm:h-6 sm:w-6" />
+          <div className="flex items-center gap-2 px-2">
             <span className="text-lg font-bold sm:text-xl">NextCo</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="#how-it-works" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link href="#how-it-works" className="text-sm font-medium transition-colors hover:text-primary">
               How It Works
-            </a>
-            <a href="#benefits" className="text-sm font-medium transition-colors hover:text-primary">
+            </Link>
+            <Link href="#benefits" className="text-sm font-medium transition-colors hover:text-primary">
               Benefits
-            </a>
-            <a href="#testimonials" className="text-sm font-medium transition-colors hover:text-primary">
+            </Link>
+            <Link href="#testimonials" className="text-sm font-medium transition-colors hover:text-primary">
               Testimonials
-            </a>
+            </Link>
           </nav>
           <div className="flex items-center gap-2 sm:gap-4">
             <Button asChild size="sm" className="sm:text-sm">
-              <a href="/">Get In</a>
+              <Link href="/">Get In</Link>
             </Button>
           </div>
         </div>
@@ -44,13 +44,13 @@ const Index = () => {
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <Button size="lg" className="rounded-lg" asChild>
-                    <a href="/">
+                    <Link href="/">
                       Let's Get In
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
+                    </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="rounded-lg" asChild>
-                    <a href="#how-it-works">Learn More</a>
+                    <Link href="#how-it-works">Learn More</Link>
                   </Button>
                 </div>
               </div>
@@ -135,21 +135,27 @@ const Index = () => {
                   <BadgeCheck className="mt-1 h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-bold sm:text-xl">Flexible Schedule</h3>
-                    <p className="text-muted-foreground text-sm sm:text-base">Work when you want, as much or as little as you want.</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">
+                      Work when you want, as much or as little as you want.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
                   <BadgeCheck className="mt-1 h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-bold sm:text-xl">Competitive Pay</h3>
-                    <p className="text-muted-foreground text-sm sm:text-base">Earn competitive rates for each order you fulfill.</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">
+                      Earn competitive rates for each order you fulfill.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
                   <BadgeCheck className="mt-1 h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-bold sm:text-xl">Weekly Payments</h3>
-                    <p className="text-muted-foreground text-sm sm:text-base">Get paid weekly directly to your bank account.</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">
+                      Get paid weekly directly to your bank account.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -167,14 +173,18 @@ const Index = () => {
                   <BadgeCheck className="mt-1 h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-bold sm:text-xl">Support Team</h3>
-                    <p className="text-muted-foreground text-sm sm:text-base">Our dedicated support team is always ready to help.</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">
+                      Our dedicated support team is always ready to help.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 sm:gap-4">
                   <BadgeCheck className="mt-1 h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="text-lg font-bold sm:text-xl">Growth Opportunities</h3>
-                    <p className="text-muted-foreground text-sm sm:text-base">Unlock higher earnings as you complete more orders.</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">
+                      Unlock higher earnings as you complete more orders.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -205,8 +215,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                  &quot;I&rsquo;ve been able to earn extra income on my own schedule. The platform is easy to use and the support
-                    team is always helpful.&quot;
+                    &quot;I&rsquo;ve been able to earn extra income on my own schedule. The platform is easy to use and
+                    the support team is always helpful.&quot;
                   </p>
                 </CardContent>
                 <CardFooter>
@@ -225,8 +235,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                  &quot;This platform has been a game-changer for me. I can work around my full-time job and still make
-                    significant extra income.&quot;
+                    &quot;This platform has been a game-changer for me. I can work around my full-time job and still
+                    make significant extra income.&quot;
                   </p>
                 </CardContent>
                 <CardFooter>
@@ -245,8 +255,8 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                  &quot;I love the flexibility and the weekly payments. It&rsquo;s become my main source of income and I couldn&rsquo;t
-                    be happier.&quot;
+                    &quot;I love the flexibility and the weekly payments. It&rsquo;s become my main source of income and
+                    I couldn&rsquo;t be happier.&quot;
                   </p>
                 </CardContent>
                 <CardFooter>
@@ -268,13 +278,13 @@ const Index = () => {
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Button size="lg" className="rounded-lg" asChild>
-                  <a href="/">
+                  <Link href="/">
                     START NOW
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
+                  </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-lg" asChild>
-                  <a href="/contact">Contact Us</a>
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>
@@ -289,18 +299,18 @@ const Index = () => {
               <span className="text-lg font-bold sm:text-xl">NextCo</span>
             </div>
             <nav className="flex flex-wrap gap-4 md:justify-center">
-              <a href="/terms" className="text-sm font-medium hover:text-primary transition-colors">
+              <Link href="/terms" className="text-sm font-medium hover:text-primary transition-colors">
                 Terms of Service
-              </a>
-              <a href="/privacy" className="text-sm font-medium hover:text-primary transition-colors">
+              </Link>
+              <Link href="/privacy" className="text-sm font-medium hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/faq" className="text-sm font-medium hover:text-primary transition-colors">
+              </Link>
+              <Link href="/faq" className="text-sm font-medium hover:text-primary transition-colors">
                 FAQ
-              </a>
-              <a href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
+              </Link>
+              <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
                 Contact
-              </a>
+              </Link>
             </nav>
             <p className="text-sm text-muted-foreground md:text-right">© 2025 NextCo. All rights reserved.</p>
           </div>
@@ -310,4 +320,5 @@ const Index = () => {
   )
 }
 
-export default Index;
+export default Index
+
