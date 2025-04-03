@@ -4,7 +4,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 // Define context type
 type AuthContextType = {
   email: string | null;
-  login: (token: string) => void;
+  userStatus: string | null;
+  login: (token: string, status: string) => void;
   logout: () => void;
 };
 
@@ -14,6 +15,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 // Provider Component
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [email, setEmail] = useState<string | null>('Bug');
+  const [userStatus, setUserStatus] = useState<string | null>('Bug');
 
   useEffect(() => {
     // Load token from localStorage when app starts
@@ -23,11 +25,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }else{
       setEmail(null);
     }
+
+    // Load token from localStorage when app starts
+    const storedStatus = localStorage.getItem("userStatus");
+    if (storedStatus) {
+      setUserStatus(storedStatus);
+    }else{
+      setUserStatus(null);
+    }
   }, []);
 
-  const login = (newEmail: string) => {
+  const login = (newEmail: string, newStatus: string) => {
     localStorage.setItem("udmddbhabdg73r83yr5y3", newEmail);
     setEmail(newEmail);
+
+    localStorage.setItem("userStatus", newStatus);
+    setUserStatus(newStatus);
   };
 
   const logout = () => {
@@ -36,7 +49,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ email, login, logout }}>
+    <AuthContext.Provider value={{ email, login, logout, userStatus }}>
       {children}
     </AuthContext.Provider>
   );

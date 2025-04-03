@@ -17,18 +17,23 @@ export default function List() {
         total_deposits: 0,
         total_withdraws: 0,
     })
-    const { email } = useAuth()
+    const { email, userStatus } = useAuth()
     const router = useRouter()
     const [isLoading, setIsLoading] = useState<boolean>(true)
 
     useEffect(() => {
         if (email) {
+          if (userStatus == 'Unverified') {
+            router.push('/auth/2fa')
+          }else{
             const fetchTransactions = async (email: string) => {
-                const res = await getTransactions({email})
-                setTransactions({...transactions, deposits: res.deposits, withdraws: res.withdraws, total_deposits: res.total_deposits, total_withdraws: res.total_withdraws})
-                setIsLoading(false)
+              const res = await getTransactions({email})
+              setTransactions({...transactions, deposits: res.deposits, withdraws: res.withdraws, total_deposits: res.total_deposits, total_withdraws: res.total_withdraws})
+              setIsLoading(false)
             }
             fetchTransactions(email)
+          }
+           
         }else{
             router.push('/auth/login')
         }

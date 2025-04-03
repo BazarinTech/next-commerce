@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 
 export default function Bonus() {
-    const {email } = useAuth()
+    const {email, userStatus } = useAuth()
     const [bonus, setBonus] = useState<Bonus[]>([])
     const router = useRouter()
 
@@ -18,7 +18,11 @@ export default function Bonus() {
         }
 
         if (email) {
-            fetchTeam(email)
+            if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
+                fetchTeam(email)
+              }
         }else{
             router.push('/auth/login')
         }

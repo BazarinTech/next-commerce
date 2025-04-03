@@ -21,7 +21,7 @@ type Error = {
 }
 
 export default function Account() {
-    const { email } = useAuth()
+    const { email, userStatus } = useAuth()
     const router = useRouter()
     const [formData, setFormData] = useState<AccountData>({
         name: '',
@@ -55,7 +55,11 @@ export default function Account() {
         };
     
         if (email) {
-            fetchAccount(email);
+            if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
+                fetchAccount(email)
+              }
         } else {
             router.push('/auth/login');
         }

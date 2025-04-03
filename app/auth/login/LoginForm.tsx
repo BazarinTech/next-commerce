@@ -19,6 +19,7 @@ type FormData = {
 type Results = {
     status: string,
     message: string,
+    user_status: string,
     error?: Error[]
 }
 export default function LoginForm() {
@@ -32,6 +33,7 @@ export default function LoginForm() {
     const [response, setResponse] = useState<Results>({
         status: '',
         message: '',
+        user_status: ''
     })
 
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,18 +44,23 @@ export default function LoginForm() {
         setResponse(regData)
 
         if (regData.status === 'Success') {
-            toast.success(regData.message)
+            if(regData.user_status == 'Verified'){
+                toast.success(regData.message)
+    
+                // Redirect to home page
+                setTimeout(() => {
+                    router.push("/");
+                }, 2000);
 
+            }else{
+
+                 // Redirect to 2fa page
+                setTimeout(() => {
+                    router.push("/auth/2fa");
+                }, 2000);
+            }
             // Store Token using AuthContext
-            login( formData.email );
-
-            // Redirect to home page
-            setTimeout(() => {
-                router.push("/");
-            }, 2000);
-            setTimeout(() => {
-                router.push("/") // Redirect to the login page
-              }, 2000)
+            login( formData.email, regData.user_status );
         }
 
     }

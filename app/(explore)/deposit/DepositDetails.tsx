@@ -12,7 +12,7 @@ import { toast } from "sonner"
 
 export default function DepositDetails() {
     const router = useRouter()
-    const { email } = useAuth()
+    const { email, userStatus } = useAuth()
     const [isLoading, setIsLoading] = useState(false)
     const [postData, setPostData] = useState<Transact>({
         amount: '',
@@ -22,7 +22,11 @@ export default function DepositDetails() {
 
     useEffect(() => {
         if (email) {
-            setPostData({...postData, email})
+            if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
+                setPostData((prev) => ({ ...prev, email }))
+              }
         }else{
             router.push('/auth/login')
         }

@@ -9,7 +9,7 @@ import Load from "./Load"
 import NotAvailble from "@/components/NotAvailble"
 
 export default function List() {
-    const { email } = useAuth() 
+    const { email, userStatus } = useAuth() 
     const [rolls, setRolls] = useState<Roll[]>([])
     const [isLoading, setIsLoading] = useState<boolean>(true)
     const router = useRouter()
@@ -28,7 +28,11 @@ export default function List() {
 
     useEffect(() => {
         if (email) {
-            fetchRolls(email) 
+            if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
+                fetchRolls(email)
+              } 
         } else {
             router.push('/auth/login')
         }

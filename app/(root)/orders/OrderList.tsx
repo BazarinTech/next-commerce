@@ -21,7 +21,7 @@ type Order = {
 
 export default function OrderList() {
     const [orders, setOrders] = useState<Order[]>([])
-    const { email } = useAuth()
+    const { email, userStatus } = useAuth()
     const router = useRouter()
     const [isLoading, setIsLoading] = useState<boolean>(true)
     
@@ -32,7 +32,12 @@ export default function OrderList() {
     }
     useEffect(() => {
         if (email) {
-            fetchOrders(email)
+            if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
+                fetchOrders(email)
+              }
+       
         }else{
             router.push('/auth/login')
         }

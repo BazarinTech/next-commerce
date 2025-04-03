@@ -13,7 +13,7 @@ import { toast } from 'sonner'
 
 function BankDetails() {
     const router = useRouter()
-    const { email } = useAuth()
+    const { email, userStatus } = useAuth()
     const [bankDetails, setBankDetails] = useState<BankDetails | null>({
             dep_name: '',
             dep_account: '',
@@ -37,9 +37,11 @@ function BankDetails() {
 
     useEffect(() => {
         if (email) {
-            fetchBankDetails(email)
-            
-
+            if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
+                fetchBankDetails(email)
+              }
         }else{
             router.push('/auth/login')
         }

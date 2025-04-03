@@ -37,7 +37,7 @@ type Grab = {
 }
 
 function ProdPage({product}: Props) {
-    const { email } = useAuth()
+    const { email, userStatus } = useAuth()
     const router = useRouter()
     const [isDialogOpen, setIsDialogOpen] = useState(false)
     const [count, setCount] = useState<number>(1)
@@ -56,11 +56,16 @@ function ProdPage({product}: Props) {
     }, [count])
     useEffect(() => {
       if (email) {
-        setGrab({...grab, user: email})
+        if (userStatus == 'Unverified') {
+          router.push('/auth/2fa')
+        }else{
+          setGrab({...grab, user: email})
+        }
+        
       }else{
         router.push('/auth/login')
       }
-    }, [])
+    }, [userStatus])
     const handleGrab = async() => {
       const response = await createGrab({...grab})
 

@@ -6,6 +6,7 @@ type Error = {
 type Results = {
     status: string,
     message: string,
+    user_status: string,
     error?: Error[]
 }
 type Props = {
@@ -21,6 +22,7 @@ async function userLogin({ email, password, setIsLoading }: Props): Promise<Resu
         return {
             status: 'Error',
             message: 'Email is required',
+            user_status: '',
             error: [
                 {
                     input: 'email',
@@ -34,6 +36,7 @@ async function userLogin({ email, password, setIsLoading }: Props): Promise<Resu
         return {
             status: 'Error',
             message: 'Passowrd is required',
+            user_status: '',
             error: [
                 {
                     input: 'password',
@@ -55,6 +58,7 @@ async function userLogin({ email, password, setIsLoading }: Props): Promise<Resu
         return {
             status: 'Failed',
             message: `${error}`,
+            user_status: '',
         }
     }
 

@@ -12,7 +12,7 @@ import { useEffect, useState } from "react"
 
 export default function WalletComp() {
     const [wallet, setWallet] = useState<Wallet | null>(null)
-        const { email } = useAuth()
+        const { email, userStatus } = useAuth()
         const router = useRouter()
         
         const fetchWallet = async (email: string)  => {
@@ -21,7 +21,11 @@ export default function WalletComp() {
         }
         useEffect(() => {
             if (email) {
+              if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
                 fetchWallet(email)
+              }
             }else{
                 router.push('/auth/login')
             }

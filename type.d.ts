@@ -135,3 +135,7 @@ type AccountData = {
     new_password: string,
     con_password: string
 }
+type FAUTH = {
+    status: string,
+    message: string
+}

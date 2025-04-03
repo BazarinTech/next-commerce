@@ -11,7 +11,7 @@ import Load from "./Load"
 import NotAvailble from "@/components/NotAvailble"
 
 export default function Team() {
-    const {email } = useAuth()
+    const {email, userStatus } = useAuth()
     const [team, setTeam] = useState<TeamResponse>({
         level1_users: [],
         level2_users: [],
@@ -31,7 +31,11 @@ export default function Team() {
         }
 
         if (email) {
+          if (userStatus == 'Unverified') {
+            router.push('/auth/2fa')
+          }else{
             fetchTeam(email)
+          }
         }else{
             router.push('/auth/login')
         }

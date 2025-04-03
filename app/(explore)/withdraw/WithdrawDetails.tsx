@@ -11,17 +11,21 @@ import { toast } from "sonner"
 
 export default function WithdrawDetails() {
     const router = useRouter()
-    const { email } = useAuth()
+    const { email, userStatus } = useAuth()
     const [isLoading, setIsLoading] = useState(false)
     const [postData, setPostData] = useState<Transact>({
         amount: '',
         email: '',
         type: 'Withdraw',
     })
-
     useEffect(() => {
         if (email) {
-            setPostData({...postData, email})
+            if (userStatus == 'Unverified') {
+                router.push('/auth/2fa')
+              }else{
+                setPostData({...postData, email})
+              }
+            
         }else{
             router.push('/auth/login')
         }
