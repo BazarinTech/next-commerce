@@ -92,7 +92,7 @@ function Details() {
       <div className="w-full px-6 py-4">
         <p className="text-lg font-bold text-center">Enter 6-digit code we sent to your phone</p>
         <p className="text-gray-500 text-center">
-          Didn't get code?{" "}
+          Didn&apos;t get code?{" "}
           <Button variant="outline" onClick={handleResend} disabled={isCounting || isRLoading}>
           {isRLoading ? 'Please wait..' : 'Resend'}
           </Button>{" "}

@@ -9,6 +9,10 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import Load from "./Load"
 import NotAvailble from "@/components/NotAvailble"
+import FormInput from "@/components/FormInput"
+import { Button } from "@/components/ui/button"
+import { Copy } from "lucide-react"
+import { toast } from "sonner"
 
 export default function Team() {
     const {email, userStatus } = useAuth()
@@ -40,6 +44,14 @@ export default function Team() {
             router.push('/auth/login')
         }
     }, [email, router])
+    const referralLink = "https://nextco-seven.vercel.app/auth/register?upline=8";
+
+    const copyToClipboard = () => {
+      navigator.clipboard
+        .writeText(referralLink)
+        .then(() => toast.success('Referral Link Copied Successfully!'))
+        .catch((err) => toast.error(err));
+    };
   return (
     <div>
         <div className="w-full p-4">
@@ -76,6 +88,12 @@ export default function Team() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full flex justify-center flex-col items-center px-6 space-y-2">
+          <FormInput name="Referral Link" className="w-full" value={referralLink} readOnly type="text" label="Referral Link"/>
+          <div className="block w-full mb-4">
+            <Button variant='secondary' onClick={copyToClipboard} className="bg-red-300">Copy <Copy /></Button>
+          </div>
       </div>
       <div className="w-full px-4 py-2">
       <Tabs defaultValue="level1" className="w-full">
