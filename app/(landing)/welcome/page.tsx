@@ -45,7 +45,7 @@ const Index = () => {
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <Button size="lg" className="rounded-lg" asChild>
                     <Link href="/">
-                      Let's Get In
+                      Let&rsquo;s Get In
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
