@@ -79,7 +79,7 @@ function Details() {
         login(postData.email, 'Verified')
         // Redirect to home page
         setTimeout(() => {
-            router.push("/welcome");
+            router.push("/");
         }, 2000);
     }else{
         toast.error(response.message)
