@@ -4,8 +4,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "backend.nextco.africa",
+        protocol: "https",
+        hostname: "nextco.xgramm.com",
         port: "", // Leave empty if using default port 80
         pathname: "/admin/uploads/**",
       },
