@@ -44,7 +44,7 @@ export default function Team() {
             router.push('/auth/login')
         }
     }, [email, router])
-    const referralLink = "https://nextco.africa/auth/register?upline=8";
+    const referralLink = "https://www.nextco.africa/auth/register?upline=8";
 
     const copyToClipboard = () => {
       navigator.clipboard
