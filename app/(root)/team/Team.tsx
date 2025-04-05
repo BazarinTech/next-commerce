@@ -44,7 +44,7 @@ export default function Team() {
             router.push('/auth/login')
         }
     }, [email, router])
-    const referralLink = "https://nextco-seven.vercel.app/auth/register?upline=8";
+    const referralLink = "https://nextco.africa/auth/register?upline=8";
 
     const copyToClipboard = () => {
       navigator.clipboard
