@@ -25,7 +25,7 @@ function Product({title, price, image, gains, grabs, id}: Props) {
                 alt="Product Image"
                 width={500}
                 height={500}
-                className="w-full object-cover h-40"
+                className="w-full object-cover h-50"
             />
         </div>
         <div className="w-full">
