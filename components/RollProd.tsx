@@ -52,7 +52,7 @@ function RollProd({title, price, image, rolls, status, id, email}: Props) {
     }
   return (
     <div className="bg-white w-full rounded-lg py-2 px-4 grid place-items-center my-3">
-        <div className="bg-gray-300 w-full h-50 sm:h-fit rounded-lg overflow-hidden">
+        <div className="bg-gray-300 w-full h-80 sm:h-fit rounded-lg overflow-hidden">
             <Image 
                 src={image}
                 alt="shoes"
