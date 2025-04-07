@@ -88,7 +88,7 @@ function Details() {
   }
 
   return (
-    <div className="full place-items-center">
+    <div className="w-full grid place-items-center">
       <div className="w-full px-6 py-4">
         <p className="text-lg font-bold text-center">Enter 6-digit code we sent to your phone</p>
         <p className="text-gray-500 text-center">
