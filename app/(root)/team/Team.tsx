@@ -16,6 +16,7 @@ import { toast } from "sonner"
 
 export default function Team() {
     const {email, userStatus } = useAuth()
+    const [referralLink, setReferralLink] = useState('')
     const [team, setTeam] = useState<TeamResponse>({
         level1_users: [],
         level2_users: [],
@@ -23,6 +24,7 @@ export default function Team() {
         level2_active_users: 0,
         level1_income: 0,
         level2_income: 0,
+        userID: 0
     })
     const router = useRouter()
     const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -31,6 +33,7 @@ export default function Team() {
         const fetchTeam = async (email: string) => {
             const res = await getTeam({email});
             setTeam(res)
+            setReferralLink(`https://www.nextco.africa/auth/register?upline=${res.userID}`)
             setIsLoading(false)
         }
 
@@ -44,7 +47,6 @@ export default function Team() {
             router.push('/auth/login')
         }
     }, [email, router])
-    const referralLink = "https://www.nextco.africa/auth/register?upline=8";
 
     const copyToClipboard = () => {
       navigator.clipboard

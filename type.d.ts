@@ -110,6 +110,7 @@ type TeamResponse = {
     level2_active_users: number,
     level1_income: number,
     level2_income: number,
+    userID: number
 }
 type Bonus = {
     id: number
