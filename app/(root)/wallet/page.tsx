@@ -28,10 +28,10 @@ const Page = () => {
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Know Us</h2>
           <WalletLink link="/about" name="About" icon={<SearchSlash />} />
-          <WalletLink link="/" name="Join Whatsapp group" icon={<MessageCircle />} />
+          <WalletLink link="https://chat.whatsapp.com/DIXDs1Fw95Y3AKjIn7Gbw0" name="Join Whatsapp group" icon={<MessageCircle />} />
           <WalletLink link="/" name="Join Telegram Channel" icon={<Send />} />
-          <WalletLink link="/" name="TikTok" icon={<Music2 />} />
-          <WalletLink link="https://www.youtube.com/" name="Facebook" icon={<Facebook />} />
+          <WalletLink link="https://www.tiktok.com" name="TikTok" icon={<Music2 />} />
+          <WalletLink link="https://www.facebook.com/profile.php?id=100065515748990" name="Facebook" icon={<Facebook />} />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Profile Actions</h2>
