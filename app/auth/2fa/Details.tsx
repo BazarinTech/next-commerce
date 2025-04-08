@@ -8,6 +8,11 @@ import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthProvider';
 import resendCode from '@/lib/resendCode';
+import DialogComp from '@/components/DialogComp';
+import FormInput from '@/components/FormInput';
+import accountUpdate from '@/lib/accountUpdate';
+import { Edit } from 'lucide-react';
+import getAccount from '@/lib/getAccount';
 
 type PostData = {
   email: string;
@@ -17,20 +22,38 @@ type PostData = {
 function Details() {
   const router = useRouter()
   const { email, login } = useAuth();
-  const [timer, setTimer] = useState(60);
+  const [timer, setTimer] = useState(30);
   const [isCounting, setIsCounting] = useState(true);
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isRLoading, setIsRLoading] = useState<boolean>(false)
+  const [formData, setFormData] = useState<AccountData>({
+    name: '',
+    email: '',
+    phone: '',
+    old_password: '',
+    new_password: '',
+    con_password: '',
+})
   const [postData, setPostData] = useState<PostData>({
     email: '',
     code: '',
   });
 
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+}
+
+  const fetchAccount = async (email: string) => {
+      const res = await getAccount({ email });
+      setFormData((prev) => ({ ...prev, ...res, email })); // Functional update
+  };
+
   const [otpValue, setOtpValue] = useState('');
 
   useEffect(() => {
-    if (email) {
+    if (email || email == 'Bug') {
         setPostData({...postData, email})
+        fetchAccount(email)
     }else{
         router.push('/auth/login')
     }
@@ -87,10 +110,32 @@ function Details() {
     setIsLoading(false)
   }
 
+  const handleSaveChanges= async () => {
+    const regData = await accountUpdate({...formData, setIsLoading})
+
+    if (regData.status === 'Success') {
+        toast.success(regData.message)
+    }else{
+      toast.error(regData.message)
+    }
+}
+
   return (
     <div className="w-full grid place-items-center">
-      <div className="w-full px-6 py-4">
+      <div className="w-[100%] grid place-items-center px-6 py-4">
         <p className="text-lg font-bold text-center">Enter 6-digit code we sent to your phone</p>
+        <DialogComp 
+        title='Phone Number' 
+        description='Make sure to enter valid Phone Number!' 
+        trigger={<Button className='my-4'>Edit Phone <Edit /></Button>} 
+        footer={ isLoading ? <Button type="submit" disabled>Saving...</Button> : <Button type="submit" onClick={() => handleSaveChanges()}>Save changes</Button>}
+        >
+        <div className="grid gap-4 place-items-center py-4">
+          <div className="grid grid-cols-4 gap-4">
+            <FormInput name='phone' type='tel' label='Phone Number' placeholder='eg 0769472724' value={formData.phone} handleInput={handleInput}/>
+          </div>
+        </div>
+        </DialogComp>
         <p className="text-gray-500 text-center">
           Didn&apos;t get code?{" "}
           <Button variant="outline" onClick={handleResend} disabled={isCounting || isRLoading}>
