@@ -25,7 +25,7 @@ export default async function Home() {
             </div>
 
             <div className="block px-1">
-              <p className="text-xl/loose font-semibold">Invite 5 people earn Kes 45.00!</p>
+              <p className="text-xl/loose font-semibold">Invite 10 people earn Kes 150.00!</p>
             </div>
             <Link href='/team' className="px-1 py-2">
               <Button className="bg-white text-black" variant='secondary'>Get Started!</Button>
