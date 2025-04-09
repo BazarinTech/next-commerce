@@ -1,13 +1,14 @@
 import Link from "next/link"
-import { ArrowRight, BadgeCheck, DollarSign, Package, ShoppingBag, Star, Truck } from "lucide-react"
+import { ArrowRight, BadgeCheck, DollarSign, ShoppingBag, Star, Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { SparklesCore } from "@/components/ui/sparkles"
 
 const Index = () => {
   return (
     <div className="flex min-h-screen w-full flex-col overflow-x-hidden">
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur-sm">
-        <div className="container flex h-16 items-center justify-between py-4">
+        <div className="container flex h-16 items-center justify-between py-4 px-2">
           <div className="flex items-center gap-2 px-2">
             <span className="text-lg font-bold sm:text-xl">NextCo</span>
           </div>
@@ -30,36 +31,45 @@ const Index = () => {
         </div>
       </header>
       <main className="flex-1">
-        <section className="py-10 md:py-16 lg:py-24 xl:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-6xl">
-                    Earn Money by Fulfilling Orders
-                  </h1>
-                  <p className="max-w-[600px] text-muted-foreground sm:text-lg md:text-xl">
-                    Join thousands of people making extra income by grabbing and fulfilling orders on our platform.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <Button size="lg" className="rounded-lg" asChild>
-                    <Link href="/">
-                      Let&rsquo;s Get In
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button size="lg" variant="outline" className="rounded-lg" asChild>
-                    <Link href="#how-it-works">Learn More</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <div className="relative h-[200px] w-[200px] sm:h-[250px] sm:w-[250px] md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] rounded-full bg-muted/60 p-4 shadow-lg">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Package className="h-24 w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 text-primary" />
-                  </div>
-                </div>
+        {/* Replaced hero section with SparklesPreviewColorful */}
+        <section className="relative">
+          <div className="h-[40rem] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden">
+            <div className="w-full absolute inset-0 h-full">
+              <SparklesCore
+                id="tsparticlescolorful"
+                background="transparent"
+                minSize={0.6}
+                maxSize={1.4}
+                particleDensity={100}
+                className="w-full h-full"
+                particleColor="#00ff00"
+                speed={0.5}
+              />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-4 relative z-20">
+              <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                WELCOME TO NEXTCO
+              </h1>
+              <p className="text-neutral-300 cursor-default text-center text-xl md:text-2xl">Start Grabbing Orders</p>
+              <div className="flex flex-col gap-3 sm:flex-row mt-8">
+                <Button
+                  size="lg"
+                  className="rounded-lg bg-gradient-to-r from-green-400 to-emerald-600 hover:from-green-500 hover:to-emerald-700 border-0"
+                  asChild
+                >
+                  <Link href="/">
+                    Make Money
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-lg text-black border-white/20 hover:bg-white/10"
+                  asChild
+                >
+                  <Link href="#how-it-works">Learn More</Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -71,7 +81,7 @@ const Index = () => {
               <div className="space-y-2 max-w-3xl">
                 <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">How It Works</h2>
                 <p className="text-muted-foreground sm:text-lg md:text-xl">
-                  Our platform makes it easy to earn money by fulfilling orders in your area.
+                  Our platform makes it easy to earn money by Grabbing orders in your area.
                 </p>
               </div>
             </div>
@@ -94,11 +104,11 @@ const Index = () => {
                   <div className="mb-3 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
                     <Truck className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <CardTitle className="text-lg sm:text-xl">2. Fulfill the Order</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl">2. Grab the Order</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-sm sm:text-base">
-                    Pick up the items and deliver them to the customer following our simple guidelines.
+                    Grab them following simple steps.
                   </p>
                 </CardContent>
               </Card>
@@ -125,7 +135,7 @@ const Index = () => {
               <div className="space-y-2 max-w-3xl">
                 <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Why Choose Us</h2>
                 <p className="text-muted-foreground sm:text-lg md:text-xl">
-                  Our platform offers numerous benefits for order fulfillment partners.
+                  Our platform offers numerous benefits for order Grabbing partners.
                 </p>
               </div>
             </div>
@@ -145,7 +155,7 @@ const Index = () => {
                   <div>
                     <h3 className="text-lg font-bold sm:text-xl">Competitive Pay</h3>
                     <p className="text-muted-foreground text-sm sm:text-base">
-                      Earn competitive rates for each order you fulfill.
+                      Earn competitive rates for each order you Grab.
                     </p>
                   </div>
                 </div>
@@ -165,7 +175,7 @@ const Index = () => {
                   <div>
                     <h3 className="text-lg font-bold sm:text-xl">User-Friendly App</h3>
                     <p className="text-muted-foreground text-sm sm:text-base">
-                      Our intuitive app makes finding and fulfilling orders simple.
+                      Our intuitive app makes finding and Grab orders simple.
                     </p>
                   </div>
                 </div>
@@ -291,7 +301,7 @@ const Index = () => {
           </div>
         </section>
       </main>
-      <footer className="border-t bg-muted/50">
+      <footer className="border-t bg-muted/50 px-2">
         <div className="container py-6 md:py-8">
           <div className="grid gap-6 grid-cols-1 md:grid-cols-3 md:items-center md:py-4">
             <div className="flex items-center gap-2">
@@ -321,4 +331,3 @@ const Index = () => {
 }
 
 export default Index
-

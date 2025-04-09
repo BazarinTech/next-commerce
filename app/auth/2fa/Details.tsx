@@ -102,7 +102,7 @@ function Details() {
         login(postData.email, 'Verified')
         // Redirect to home page
         setTimeout(() => {
-            router.push("/");
+            router.push("/welcome");
         }, 2000);
     }else{
         toast.error(response.message)

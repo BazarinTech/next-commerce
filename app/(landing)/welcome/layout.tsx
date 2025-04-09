@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Withdraw",
+  title: "Lets Get started!",
   description: "Discover the future of e-commerce.",
 };
 
