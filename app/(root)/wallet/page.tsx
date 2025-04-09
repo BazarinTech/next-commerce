@@ -23,7 +23,7 @@ const Page = () => {
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Support</h2>
-          <WalletLink link="/deposit" name="Customer Care" icon={<MessageCircleQuestion />} />
+          <WalletLink link="https://wa.me/254750569608" name="Customer Care" icon={<MessageCircleQuestion />} />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Know Us</h2>
