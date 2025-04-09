@@ -21,15 +21,16 @@ export default async function Home() {
           <div className="block w-2/3">
             <div className="flex gap-1 items-center mb-4">
               <p className="text-xs"><Award /></p>
-              <p className="text-xs">Best Seller!</p>
+              <p className="text-xs">Become Invite Hero!</p>
             </div>
 
             <div className="block px-1">
-              <p className="text-xl/loose font-semibold">Discover the perfect shopping journey!</p>
+              <p className="text-xl/loose font-semibold">Invite 5 people earn Kes 45.00!</p>
             </div>
-            <div className="px-1 py-2">
+            <Link href='/team' className="px-1 py-2">
               <Button className="bg-white text-black" variant='secondary'>Get Started!</Button>
-            </div>
+            </Link>
+
           </div>
           <div className="block w-1/3">
             <Image 
