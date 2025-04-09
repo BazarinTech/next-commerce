@@ -44,8 +44,10 @@ export default function LoginForm() {
         setResponse(regData)
 
         if (regData.status === 'Success') {
+
+            toast.success(regData.message)
+            
             if(regData.user_status == 'Verified'){
-                toast.success(regData.message)
     
                 // Redirect to home page
                 setTimeout(() => {
