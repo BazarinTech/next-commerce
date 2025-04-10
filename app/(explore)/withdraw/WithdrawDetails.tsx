@@ -61,7 +61,7 @@ export default function WithdrawDetails() {
       <div className="grid place-items-center w-full py-4">
         <FormInput name="amount" label="Amount" placeholder="eg 500" type="number" handleInput={handleInput}/>
         <div className="grid place-items-center my-2">
-        {!isLoading ? <Button onClick={handleDeposit}>Proceed To Deposit</Button> : <Button disabled>Please wait...</Button>}
+        {!isLoading ? <Button onClick={handleDeposit}>Proceed To Cashout</Button> : <Button disabled>Please wait...</Button>}
         </div>
       </div>
     </div>
