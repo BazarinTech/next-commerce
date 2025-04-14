@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
-import { Metadata } from "next";
 import ClientRoot from "./ClientRoot";
 
 const geistSans = Geist({
@@ -12,12 +11,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-
-export const metadata: Metadata = {
-  manifest: 'manifest.json',
-};
-
 
 export default function RootLayout({
   children,
