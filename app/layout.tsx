@@ -1,10 +1,7 @@
-"use client";
-
-import { useEffect } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
-import { Toaster } from "@/components/ui/sonner";
-import { AuthProvider } from "@/contexts/AuthProvider";
+import { Metadata } from "next";
+import ClientRoot from "./ClientRoot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,30 +13,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+export const metadata: Metadata = {
+  manifest: 'manifest.json',
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    const disableRightClick = (e: MouseEvent) => {
-      e.preventDefault();
-    };
-    document.addEventListener("contextmenu", disableRightClick);
-    return () => {
-      document.removeEventListener("contextmenu", disableRightClick);
-    };
-  }, []);
+  
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased grid place-items-center box-border overflow-x-hidden font-[family-name:var(--font-geist-sans)]`}
       >
-        <AuthProvider>
+        <ClientRoot>
           {children}
-          <Toaster richColors position="top-right" />
-        </AuthProvider>
+        </ClientRoot>
       </body>
     </html>
   );
