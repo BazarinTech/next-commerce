@@ -21,11 +21,11 @@ export default async function Home() {
           <div className="block w-2/3">
             <div className="flex gap-1 items-center mb-4">
               <p className="text-xs"><Award /></p>
-              <p className="text-xs">Income master!</p>
+              <p className="text-xs">Lets Do This!</p>
             </div>
 
             <div className="block px-1">
-              <p className="text-xl/loose font-semibold">Shamelessly making money online!</p>
+              <p className="text-xl/loose font-semibold">Its your time to win. This year is yours!</p>
             </div>
             <Link href='/team' className="px-1 py-2">
               <Button className="bg-white text-black" variant='secondary'>Get Started!</Button>

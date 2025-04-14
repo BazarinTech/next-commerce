@@ -4,12 +4,13 @@ import Link from 'next/link'
 type Props = {
     link: string,
     name: string,
-    icon: React.ReactNode
+    icon: React.ReactNode,
+    isExternal: boolean,
 }
 
-function WalletLink({link, name, icon}: Props) {
+function WalletLink({link, name, icon, isExternal}: Props) {
   return (
-    <Link href={link} className='my-4 flex items-center justify-between w-full'>
+    <Link href={link} target={isExternal ? '_blank' : '_self'} rel={isExternal ? 'noopener noreferrer' : undefined} className='my-4 flex items-center justify-between w-full'>
         <div className="flex gap-2 max-w-2/3 items-center">
             <div className="mr-2">{icon}</div>
             <div className="block">

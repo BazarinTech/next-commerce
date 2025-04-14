@@ -1,5 +1,5 @@
 import WalletLink from "@/components/WalletLink";
-import { BadgeDollarSign, Banknote, Facebook, HandCoins, Landmark, LogOut, MessageCircle, MessageCircleQuestion, Music2, SearchSlash, Send, User, WalletCards } from "lucide-react";
+import { AppleIcon, BadgeDollarSign, Banknote, Facebook, HandCoins, Landmark, LogOut, MessageCircle, MessageCircleQuestion, Music2, SearchSlash, Send, User, WalletCards } from "lucide-react";
 import WalletComp from "./WalletComp";
 import Logout from "./Logout";
 
@@ -12,30 +12,31 @@ const Page = () => {
       <div className="w-full p-4">
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Payment Services</h2>
-          <WalletLink link="/deposit" name="Deposit" icon={<HandCoins />} />
-          <WalletLink link="/withdraw" name="Withdraw" icon={<WalletCards />} />
-          <WalletLink link="/transaction" name="Transactions" icon={<Banknote />} />
-          <WalletLink link="/bank" name="Bank Details" icon={<Landmark />} />
+          <WalletLink link="/deposit" name="Deposit" icon={<HandCoins />} isExternal={false} />
+          <WalletLink link="/withdraw" name="Withdraw" icon={<WalletCards />} isExternal={false} />
+          <WalletLink link="/transaction" name="Transactions" icon={<Banknote />} isExternal={false} />
+          <WalletLink link="/bank" name="Bank Details" icon={<Landmark />} isExternal={false} />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Other Services</h2>
-          <WalletLink link="/bonus" name="Bonus" icon={<BadgeDollarSign  />} />
+          <WalletLink link="/bonus" name="Bonus" icon={<BadgeDollarSign  />} isExternal={false} />
+          <WalletLink link="https://apk.e-droid.net/apk/app3553710-j2kzfc.apk?v=1" name="Download App" icon={<AppleIcon />} isExternal />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Support</h2>
-          <WalletLink link="https://wa.me/254750569608" name="Customer Care" icon={<MessageCircleQuestion />} />
+          <WalletLink link="https://wa.me/254750569608" name="Customer Care" icon={<MessageCircleQuestion />} isExternal={false} />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Know Us</h2>
-          <WalletLink link="/about" name="About" icon={<SearchSlash />} />
-          <WalletLink link="https://chat.whatsapp.com/DIXDs1Fw95Y3AKjIn7Gbw0" name="Join Whatsapp group" icon={<MessageCircle />} />
-          <WalletLink link="/" name="Join Telegram Channel" icon={<Send />} />
-          <WalletLink link="https://www.tiktok.com" name="TikTok" icon={<Music2 />} />
-          <WalletLink link="https://www.facebook.com/profile.php?id=100065515748990" name="Facebook" icon={<Facebook />} />
+          <WalletLink link="/about" name="About" icon={<SearchSlash />} isExternal={false} />
+          <WalletLink link="https://chat.whatsapp.com/DIXDs1Fw95Y3AKjIn7Gbw0" name="Join Whatsapp group" icon={<MessageCircle />} isExternal />
+          <WalletLink link="/" name="Join Telegram Channel" icon={<Send />} isExternal={false} />
+          <WalletLink link="https://www.tiktok.com" name="TikTok" icon={<Music2 />} isExternal />
+          <WalletLink link="https://www.facebook.com/profile.php?id=100065515748990" name="Facebook" icon={<Facebook />} isExternal />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Profile Actions</h2>
-          <WalletLink link="/account" name="Account Details" icon={<User />} />
+          <WalletLink link="/account" name="Account Details" icon={<User />} isExternal={false} />
           <Logout name="Logout" icon={<LogOut />} />
         </div>
       </div>
