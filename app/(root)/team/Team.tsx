@@ -33,7 +33,7 @@ export default function Team() {
         const fetchTeam = async (email: string) => {
             const res = await getTeam({email});
             setTeam(res)
-            setReferralLink(`https://www.nextco.africa/auth/register?upline=${res.userID}`)
+            setReferralLink(`https://www.kilion.club/auth/register?upline=${res.userID}`)
             setIsLoading(false)
         }
 
