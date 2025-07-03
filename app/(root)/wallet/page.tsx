@@ -20,19 +20,19 @@ const Page = () => {
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Other Services</h2>
           <WalletLink link="/bonus" name="Bonus" icon={<BadgeDollarSign  />} isExternal={false} />
-          <WalletLink link="https://www.appcreator24.com/app3553710-j2kzfc" name="Download App" icon={<AppleIcon />} isExternal />
+          <WalletLink link="#" name="Download App" icon={<AppleIcon />} isExternal />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Support</h2>
-          <WalletLink link="https://wa.me/254750569608" name="Customer Care" icon={<MessageCircleQuestion />} isExternal={false} />
+          <WalletLink link="https://wa.me/254101719497" name="Customer Care" icon={<MessageCircleQuestion />} isExternal={false} />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Know Us</h2>
           <WalletLink link="/about" name="About" icon={<SearchSlash />} isExternal={false} />
-          <WalletLink link="https://chat.whatsapp.com/DIXDs1Fw95Y3AKjIn7Gbw0" name="Join Whatsapp group" icon={<MessageCircle />} isExternal />
+          <WalletLink link="https://chat.whatsapp.com/CWYY25ucfB7680w1OuVeR0?mode=r_t" name="Join Whatsapp group" icon={<MessageCircle />} isExternal />
           <WalletLink link="/" name="Join Telegram Channel" icon={<Send />} isExternal={false} />
           <WalletLink link="https://www.tiktok.com" name="TikTok" icon={<Music2 />} isExternal />
-          <WalletLink link="https://www.facebook.com/profile.php?id=100065515748990" name="Facebook" icon={<Facebook />} isExternal />
+          <WalletLink link="#" name="Facebook" icon={<Facebook />} isExternal />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Profile Actions</h2>
