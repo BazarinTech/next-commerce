@@ -43,7 +43,7 @@ const Topbar = () => {
 
   return (
     <div className={`${isHide ? 'hidden' : 'sticky'} border-b-2 border-gray-200 px-2 py-4 bg-white/50 z-10 backdrop-blur-lg top-0`}>
-        <p className="text-2xl text-center font-bold">{title ? title : 'Next Commerce'}</p>
+        <p className="text-2xl text-center font-bold">{title ? title : 'Kilion'}</p>
     </div>
   )
 }

@@ -5,7 +5,7 @@ function page() {
     <div className="bg-zinc-200 h-screen">
       <div className="w-full px-4 py-2">
         <div className="w-full bg-black/60 rounded-lg px-4 py-2 text-center text-white">
-          <p className="text-xl font-bold my-2">Welcome To Next Co</p>
+          <p className="text-xl font-bold my-2">Welcome To Kilion</p>
         </div>
       </div>
       <div className="w-full px-4 py-2">
