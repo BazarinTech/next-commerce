@@ -25,7 +25,7 @@ export default async function Home() {
             </div>
 
             <div className="block px-1">
-              <p className="text-xl/loose font-semibold">Get Started in modern e-commerce fullfillment, with us!</p>
+              <p className="text-xl/loose font-semibold">Start modern e-commerce fullfillment, with us!</p>
             </div>
             <Link href='/team' className="px-1 py-2">
               <Button className="bg-white text-black" variant='secondary'>Get Started!</Button>
