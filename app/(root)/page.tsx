@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Award, BadgeDollarSign, Banknote, Coins, HandCoins, LayoutGrid, ListOrdered, ShoppingBasket, UsersRound, Wallet, WalletCards } from "lucide-react";
+import { Award, BadgeDollarSign, Banknote, Coins, HandCoins, LayoutGrid, ListOrdered, SearchSlash, ShoppingBasket, UsersRound, Wallet, WalletCards } from "lucide-react";
 import Image from "next/image";
 import hero from "@/public/images/next-hero.png"
 import Link from "next/link";
@@ -73,9 +73,9 @@ export default async function Home() {
               <p className="text-2xl"><Wallet size={35} /></p>
               <p className="text-sm">Wallet</p>
             </Link>
-            <Link href='/rolls' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
-              <p className="text-2xl"><Coins size={35} /></p>
-              <p className="text-sm">Rolls</p>
+            <Link href='/about' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
+              <p className="text-2xl"><SearchSlash size={35} /></p>
+              <p className="text-sm">About</p>
             </Link>
             <Link href='/orders' className="grid place-items-center p-2 hover:bg-gray-300 sm:w-1/4 w-1/2  rounded-2xl text-gray-500">
               <p className="text-2xl"><ListOrdered size={35} /></p>

@@ -1,6 +1,6 @@
 'use client'
 
-import { Coins, Home, ListOrdered, UsersRound, Wallet } from "lucide-react";
+import { Coins, Home, ListOrdered, SearchSlash, UsersRound, Wallet } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ const Bottombar = () => {
   const navLinks = [
     { name: "Home", href: "/", icon: <Home size={30} />},
     { name: "Orders", href: "/orders", icon: <ListOrdered size={30} />},
-    { name: "Rolls", href: "/rolls", icon: <Coins size={30} /> },
+    { name: "About", href: "/about", icon: <SearchSlash size={30} /> },
     { name: "Team", href: "/team", icon: <UsersRound size={30} /> },
     { name: "Wallet", href: "/wallet", icon: <Wallet size={30} /> },
   ];
@@ -23,7 +23,7 @@ const Bottombar = () => {
     '/transaction',
     '/bank',
     '/bonus',
-    '/about',
+    '/rolls',
     '/account',
     '/auth/2fa',
     '/auth/login',

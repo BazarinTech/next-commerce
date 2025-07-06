@@ -10,7 +10,6 @@ const Topbar2 = () => {
         { name: "Bank", href: "/bank"},
         { name: "Bonus", href: "/bonus"},
         { name: "Add Funds", href: "/deposit"},
-        { name: "About Us", href: "/about"},
         { name: "Transaction", href: "/transaction"},
         { name: "Make Withdrawal", href: "/withdraw"},
         { name: "Profile Details", href: "/account"},
@@ -19,7 +18,7 @@ const Topbar2 = () => {
   const [isHide, setIsHide] = useState<boolean>(false)
   const pathsHide = [
     '/orders',
-    '/rolls',
+    '/about',
     '/wallet',
     '/',
     '/team',

@@ -29,7 +29,7 @@ const Page = () => {
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Know Us</h2>
           <WalletLink link="/about" name="About" icon={<SearchSlash />} isExternal={false} />
-          <WalletLink link="https://chat.whatsapp.com/CWYY25ucfB7680w1OuVeR0?mode=r_t" name="Join Whatsapp group" icon={<MessageCircle />} isExternal />
+          <WalletLink link="https://chat.whatsapp.com/Ec4xBYZe2dbIqugX94NY1V?mode=ac_c" name="Join Whatsapp group" icon={<MessageCircle />} isExternal />
           <WalletLink link="/" name="Join Telegram Channel" icon={<Send />} isExternal={false} />
           <WalletLink link="https://www.tiktok.com" name="TikTok" icon={<Music2 />} isExternal />
           <WalletLink link="#" name="Facebook" icon={<Facebook />} isExternal />

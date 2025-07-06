@@ -13,7 +13,7 @@ const Topbar = () => {
     '/transaction',
     '/bank',
     '/bonus',
-    '/about',
+    '/rolls',
     '/account',
     '/auth/2fa',
     '/auth/login',
@@ -29,8 +29,8 @@ const Topbar = () => {
     }
     if (pathname == '/orders') {
       setTitle('Grabs List')
-    }else if(pathname == '/rolls'){
-      setTitle('Upgrade Rolls')
+    }else if(pathname == '/about'){
+      setTitle('About Us')
     }else if(pathname == '/team'){
       setTitle('Team List')
     }else if(pathname == '/wallet'){
