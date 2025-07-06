@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Award, BadgeDollarSign, Banknote, Coins, HandCoins, LayoutGrid, ListOrdered, SearchSlash, ShoppingBasket, UsersRound, Wallet, WalletCards } from "lucide-react";
+import { Award, BadgeDollarSign, Banknote, HandCoins, LayoutGrid, ListOrdered, SearchSlash, ShoppingBasket, UsersRound, Wallet, WalletCards } from "lucide-react";
 import Image from "next/image";
 import hero from "@/public/images/next-hero.png"
 import Link from "next/link";

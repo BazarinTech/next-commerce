@@ -1,6 +1,6 @@
 'use client'
 
-import { Coins, Home, ListOrdered, SearchSlash, UsersRound, Wallet } from "lucide-react";
+import { Home, ListOrdered, SearchSlash, UsersRound, Wallet } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useEffect, useState } from "react";
