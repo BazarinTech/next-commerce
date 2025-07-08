@@ -20,7 +20,7 @@ const Page = () => {
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Other Services</h2>
           <WalletLink link="/bonus" name="Bonus" icon={<BadgeDollarSign  />} isExternal={false} />
-          <WalletLink link="#" name="Download App" icon={<AppleIcon />} isExternal />
+          <WalletLink link="https://apk.e-droid.net/apk/app3648077-i2vpc9.apk?v=2" name="Download App" icon={<AppleIcon />} isExternal />
         </div>
         <div className="block w-full">
           <h2 className="text-xl font-bold mb-4">Support</h2>
