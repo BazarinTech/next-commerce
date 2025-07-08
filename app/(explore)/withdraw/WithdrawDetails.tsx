@@ -47,7 +47,7 @@ export default function WithdrawDetails() {
   return (
     <div className='w-full grid place-items-center'>
         <div className="w-full grid place-items-center">
-            <AlertComp title="Withdrawing Steps" className="my-2 w-[90%]">
+            <AlertComp title="Withdrawing Steps(fee charged 20%)" className="my-2 w-[90%]">
                 <ul className="list-disc list-inside">
                     <li>Step 1: Make sure you have setup wallet to recieve money</li>
                     <li>Step 2: Enter amount you wish to cashout</li>
