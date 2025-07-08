@@ -37,6 +37,7 @@ export default function WithdrawDetails() {
         setIsLoading(false)
         if (res.status === 'Success') {
             toast.success(res.message)
+            setPostData({...postData, amount: ''})
         }else{
             toast.error(res.message)
         }
